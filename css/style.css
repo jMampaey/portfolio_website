@@ -380,7 +380,6 @@ p {
 .project-content {
     display: flex;
     flex-direction: column;
-    gap: 24px;
     justify-content: center;
 }
 
@@ -390,22 +389,36 @@ p {
 
 .project-tags {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     flex-wrap: nowrap;
+    align-items: center;
 }
 
 .project-tag {
     font-family: var(--font-primary);
-    font-size: 14px;
-    color: var(--lightest-orange);
-    padding: 6px 12px;
-    border: 1px solid var(--lightest-orange);
-    border-radius: 4px;
+    font-size: 20px;
+    color: var(--light-orange);
+    padding: 0;
+    border: none;
+}
+
+.project-tag:not(:last-child)::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 37px;
+    background-image: url('../assets/images/icons/tag-line.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    /* transform: translateY(1px); */
 }
 
 .project-content p {
     color: var(--lightest-orange);
     line-height: 1.8;
+    margin-top: 24px;
 }
 
 .select-project-button {
@@ -422,6 +435,7 @@ p {
     gap: 8px;
     align-self: flex-start;
     transition: opacity 0.2s ease;
+    margin-top: 24px;
 }
 
 .select-project-button:hover {

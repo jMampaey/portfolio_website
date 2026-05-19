@@ -61,7 +61,7 @@ p {
     background-color: var(--lightest-orange);
     border-radius: 12px;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 24px auto 0;
     max-height: calc(100vh - 48px);
     position: relative;
 }
@@ -80,6 +80,7 @@ p {
     pointer-events: none;
     z-index: 1;
     border-radius: 12px;
+    margin: 24px 24px 0px 24px
 }
 
 .noise-light>* {

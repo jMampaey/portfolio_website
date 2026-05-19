@@ -133,6 +133,7 @@ p {
 .half-container-right{
     width: 540px;
     margin-right: auto;
+    padding-left: 100px;
 }
 
 /* Column widths using flexbox */
@@ -544,15 +545,19 @@ p {
     border-radius: 16px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
 }
 
 .education-item {
     display: flex;
     gap: 16px;
-    align-items: flex-start;
-    padding-bottom: 32px;
-    border-bottom: 1px solid rgba(255, 245, 233, 0.3);
+    align-items: center;
+    padding: 27px 0;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to right, #FFDBB1 50%, rgba(255, 219, 177, 0.5) 72%, rgba(255, 219, 177, 0.25) 100%) 1;
+}
+
+.education-item:first-child {
+    padding-top: 0;
 }
 
 .education-item:last-child {
@@ -571,7 +576,7 @@ p {
     font-size: 16px;
     font-weight: bold;
     color: var(--lightest-orange);
-    margin: 0 0 8px 0;
+    margin: 0 0 4px 0;
     line-height: 1.4;
 }
 

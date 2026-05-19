@@ -691,6 +691,7 @@ p {
     border-radius: 16px;
     padding: 80px 0;
     margin-top: 24px;
+    position: relative;
 }
 
 .sharing-knowledge .container {

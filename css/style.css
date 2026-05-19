@@ -121,13 +121,19 @@ p {
 .half-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
     width: 50%;
 }
 
-.half-container-sizer{
-    max-width: 500px;
+.half-container-left{
+    width: 540px;
     margin-left: auto;
+    padding-right: 100px;
+}
+
+.half-container-right{
+    width: 540px;
+    margin-right: auto;
 }
 
 /* Column widths using flexbox */
@@ -510,7 +516,7 @@ p {
     flex-direction: column;
     gap: 24px;
     padding: 40px;
-    border-radius: 8px;
+    border-radius: 16px;
 }
 
 .about-content h1 {
@@ -534,7 +540,7 @@ p {
 
 .education-card {
     background-color: var(--green);
-    padding: 32px;
+    padding: 40px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -579,6 +585,12 @@ p {
 .photo-card {
     border-radius: 16px;
     overflow: hidden;
+    background-color: var(--lightest-orange);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px;
+    border-radius: 16px;
 }
 
 .photo-card img {

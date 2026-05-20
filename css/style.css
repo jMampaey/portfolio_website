@@ -915,3 +915,28 @@ p {
     width: 24px;
     height: 24px;
 }
+
+/* Footer */
+.footer .container {
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 112px;
+}
+
+.footer-copyright,
+.footer-credit {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    color: var(--darkest-green);
+}
+
+.footer-link {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    color: var(--green);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    opacity: 0.7;
+}

@@ -394,7 +394,17 @@ p {
     margin-bottom: 80px;
     border-radius: 16px;
     border: solid 2px var(--darkest-green);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.project:hover {
+    border: 2px solid var(--cta-orange);
+    box-shadow: 0 8px 0 0 var(--cta-orange);
+    transform: translateY(-8px);
+}
+
 
 .project-content {
     display: flex;
@@ -468,6 +478,13 @@ p {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.project:hover .select-project-button::before {
+    background-image: url('../assets/images/icons/x-button-color-hover.svg');
+    filter: drop-shadow(0 3px 0 var(--lightest-orange));
+    transform: translateY(-3px);
 }
 
 .project-image-right {

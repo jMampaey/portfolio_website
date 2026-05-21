@@ -483,7 +483,7 @@ p {
 
 .project:hover .select-project-button::before {
     background-image: url('../assets/images/icons/x-button-color-hover.svg');
-    filter: drop-shadow(0 3px 0 var(--lightest-orange));
+    filter: drop-shadow(0 3px 0 var(--light-orange));
     transform: translateY(-3px);
 }
 
@@ -827,7 +827,7 @@ p {
 
 .blog-card:hover .blog-select-btn::before {
     background-image: url('../assets/images/icons/x-button-color-hover.svg');
-    filter: drop-shadow(0 3px 0 var(--lightest-orange));
+    filter: drop-shadow(0 3px 0 var(--light-orange));
     transform: translateY(-3px);
 }
 

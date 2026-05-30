@@ -1,5 +1,43 @@
-/* Import Source Code Pro from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap');
+/* Local fonts */
+@font-face {
+    font-family: 'Menlo';
+    src: url('../assets/fonts/Menlo-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('../assets/fonts/SourceCodePro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('../assets/fonts/SourceCodePro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('../assets/fonts/SourceCodePro-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('../assets/fonts/SourceCodePro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 
 /* CSS Reset */
 * {
@@ -49,14 +87,16 @@ h1 {
     font-weight: 600;
     letter-spacing: 0;
     margin: 0;
+    line-height: 1;
 }
 
 h2 {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 3.2rem;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     margin: 0;
+    line-height: 1;
 }
 
 p {
@@ -260,8 +300,9 @@ p {
     font-family: var(--font-primary);
     font-size: 2rem;
     color: var(--darkest-green);
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 0;
+    line-height: 1;
 }
 
 .nav-links {
@@ -275,8 +316,9 @@ p {
 .nav-links a {
     font-family: var(--font-secondary);
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0;
+    line-height: 1;
     color: var(--darkest-green);
     text-decoration: none;
     display: flex;
@@ -334,19 +376,20 @@ p {
 }
 
 .hero h3 {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: 3.2rem;
     color: var(--green);
     margin: 0;
-    font-weight: normal;
+    font-weight: 400;
     letter-spacing: 0;
+    line-height: 1;
 }
 
 .hero h2 {
     font-family: var(--font-secondary);
     font-size: 4.8rem;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1;
     color: var(--darkest-green);
     margin: 0;
 }
@@ -434,8 +477,10 @@ p {
 }
 
 .project-tag {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
     color: var(--light-orange);
     padding: 0;
     border: none;
@@ -458,12 +503,14 @@ p {
     color: var(--lightest-orange);
     margin-top: 24px;
     font-size: 1.8rem;
+    line-height: 2.6rem;
 }
 
 .select-project-button {
-    font-family: var(--font-primary);
-    font-size: 1.6rem;
-    font-weight: normal;
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
     color: var(--light-orange);
     background: transparent;
     border: none;
@@ -555,16 +602,18 @@ p {
 }
 
 .about-content h3 {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 600;
+    line-height: 1;
     color: var(--darkest-green);
     margin: 24px 0 8px 0;
 }
 
 .about-content p {
     color: var(--darkest-green);
-    line-height: 1.8;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
     margin: 0;
 }
 
@@ -602,17 +651,18 @@ p {
 }
 
 .education-text h4 {
-    font-family: var(--font-primary);
-    font-size: 1.6rem;
-    font-weight: bold;
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
     color: var(--lightest-orange);
     margin: 0 0 4px 0;
-    line-height: 1.4;
 }
 
 .education-text p {
     font-family: var(--font-primary);
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
     color: var(--light-orange);
     margin: 0;
 }
@@ -671,9 +721,10 @@ p {
 }
 
 .skill-name {
-    font-family: var(--font-primary);
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
     color: var(--lightest-orange);
     letter-spacing: 0.05em;
 }
@@ -718,7 +769,8 @@ p {
 }
 
 .sharing-knowledge-title {
-    font-size: 5.6rem;
+    font-size: 6.4rem;
+    line-height: 1;
     color: var(--light-orange);
     text-align: center;
 }
@@ -764,12 +816,12 @@ p {
 
 
 .blog-card-title {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 3.2rem;
-    font-weight: bold;
+    font-weight: 600;
+    line-height: 1;
     color: var(--white);
     text-transform: uppercase;
-    line-height: 1.4;
     margin-bottom: 8px;
 }
 
@@ -781,8 +833,10 @@ p {
 }
 
 .blog-tag {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
     color: var(--light-orange);
 }
 
@@ -794,7 +848,7 @@ p {
     font-family: var(--font-primary);
     font-size: 1.8rem;
     color: var(--white);
-    line-height: 1.6;
+    line-height: 2.6rem;
     margin-bottom: 24px;
 }
 
@@ -806,8 +860,10 @@ p {
     border: none;
     cursor: pointer;
     color: var(--light-orange);
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
     padding: 0;
 }
 
@@ -888,7 +944,7 @@ p {
     font-size: 6.4rem;
     font-weight: 600;
     color: var(--green);
-    line-height: 1.3;
+    line-height: 1;
     margin: 0;
 }
 
@@ -909,6 +965,7 @@ p {
     font-family: var(--font-secondary);
     font-size: 4.8rem;
     font-weight: 600;
+    line-height: 1;
     color: var(--darkest-green);
     margin: 0;
 }
@@ -924,7 +981,8 @@ p {
 .contact-email {
     font-family: var(--font-primary);
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: 700;
+    line-height: 2.6rem;
     color: var(--dark-green);
     margin: 0;
 }
@@ -947,8 +1005,10 @@ p {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
     color: var(--darkest-green);
     text-decoration: none;
 }
@@ -981,12 +1041,15 @@ p {
 .footer-credit {
     font-family: var(--font-primary);
     font-size: 1.8rem;
+    line-height: 2.6rem;
     color: var(--darkest-green);
 }
 
 .footer-link {
     font-family: var(--font-primary);
     font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.6rem;
     color: var(--green);
     text-decoration: none;
 }

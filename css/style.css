@@ -251,7 +251,33 @@ p {
     height: 100%;
     pointer-events: none;
     z-index: 9999;
-    background-image: 
+    background-image:
+        repeating-linear-gradient(
+            to right,
+            rgba(255, 0, 0, 0.15) 0,
+            rgba(255, 0, 0, 0.15) 79.33px,
+            transparent 79.33px,
+            transparent calc(79.33px + 24px)
+        );
+} */
+
+/* Debug grid for project-page building blocks, matching .container's column positions exactly */
+
+/* .debug-grid {
+    position: relative;
+}
+
+.debug-grid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 112px;
+    width: calc(12 * 79.33px + 11 * 24px);
+    max-width: calc(100% - 224px);
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background-image:
         repeating-linear-gradient(
             to right,
             rgba(255, 0, 0, 0.15) 0,
@@ -443,6 +469,273 @@ p {
     color: var(--lightest-orange);
 }
 
+.main-nav--transparent {
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.main-nav--transparent .nav-logo,
+.main-nav--transparent .nav-links a {
+    color: var(--lightest-orange);
+}
+
+/* Project hero block */
+
+.project-hero {
+    position: relative;
+    height: calc(100vh - 48px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.project-hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: calc(1440px - 224px);
+    margin: 0 auto;
+}
+
+.project-hero-card {
+    position: absolute;
+    right: 0;
+    bottom: 64px;
+    max-width: 420px;
+    background-color: rgba(4, 82, 92, 0.85);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.project-hero-card h2 {
+    color: var(--lightest-orange);
+    margin: 0 0 8px;
+}
+
+.project-hero-card .project-tags {
+    margin-bottom: 24px;
+}
+
+.info-row {
+    display: flex;
+    gap: 8px;
+    font-family: var(--font-secondary);
+    font-size: 1.6rem;
+    color: var(--lightest-orange);
+}
+
+.info-row .info-label {
+    color: var(--green);
+    min-width: 110px;
+}
+
+/* Project summary/background two-column block */
+
+.project-info-section {
+    position: relative;
+    margin: 24px 0 0;
+}
+
+.project-info-backgrounds {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    gap: 24px;
+    z-index: 0;
+}
+
+.project-info-bg {
+    flex: 1;
+    border-radius: 16px;
+}
+
+.project-info-bg--summary {
+    background-color: var(--green);
+}
+
+.project-info-bg--detail {
+    background-color: var(--dark-green);
+}
+
+.project-info-content {
+    position: relative;
+    z-index: 1;
+    max-width: calc(1440px - 224px);
+    margin: 0 auto;
+    display: flex;
+    gap: 24px;
+    padding: 40px 0;
+}
+
+.project-info-content .project-summary-card,
+.project-info-content .project-detail-card {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+.project-summary-card,
+.project-detail-card {
+    flex: 1;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.project-summary-card {
+    background-color: var(--green);
+}
+
+.project-summary-card h3 {
+    color: var(--lightest-orange);
+    text-transform: uppercase;
+    margin: 0 0 16px;
+}
+
+.project-summary-card p {
+    color: var(--lightest-orange);
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    margin: 0;
+}
+
+.project-end-result-section {
+    max-width: 1440px;
+    margin: 24px auto 0;
+    padding: 0 112px;
+}
+
+.project-detail-card {
+    background-color: var(--dark-green);
+}
+
+.project-detail-card h3 {
+    color: var(--cta-orange);
+    text-transform: uppercase;
+    margin: 0 0 16px;
+}
+
+.project-detail-card p {
+    color: var(--lightest-orange);
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    margin: 0;
+}
+
+.project-features-section {
+    max-width: 1440px;
+    margin: 24px auto 0;
+    padding: 0 112px;
+}
+
+/* Feature showcase block: image + two-column detail card */
+
+.feature-showcase {
+    max-width: 1440px;
+    margin: 24px auto 0;
+    padding: 0 112px;
+}
+
+.feature-showcase-image {
+    width: 100%;
+    display: block;
+    border-radius: 16px 16px 0 0;
+}
+
+.feature-showcase-card {
+    background-color: var(--dark-green);
+    border-radius: 0 0 16px 16px;
+    padding: 40px;
+}
+
+.feature-showcase-card h2 {
+    color: var(--green);
+    margin: 0 0 24px;
+}
+
+.feature-showcase-columns {
+    display: flex;
+    gap: 40px;
+}
+
+.feature-showcase-column {
+    flex: 1;
+}
+
+.feature-showcase-column h3 {
+    color: var(--lightest-orange);
+    margin: 0 0 8px;
+}
+
+.feature-showcase-column p {
+    color: var(--lightest-orange);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin: 0 0 16px;
+}
+
+.feature-showcase-card .select-project-button {
+    margin-top: 16px;
+}
+
+/* Code snippet block: text + syntax-highlighted code */
+
+.code-section {
+    display: flex;
+    gap: 24px;
+    max-width: 1440px;
+    margin: 24px auto 0;
+    padding: 0 112px;
+}
+
+.code-section .project-detail-card {
+    flex: 1;
+}
+
+.code-card {
+    position: relative;
+    flex: 1;
+    background-color: var(--darkest-green);
+    border-radius: 16px;
+    padding: 24px;
+    overflow: auto;
+}
+
+.copy-code-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: var(--font-secondary);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--lightest-orange);
+    background-color: var(--dark-green);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.copy-code-button:hover {
+    background-color: var(--green);
+}
+
+.code-card pre {
+    margin: 0;
+    background: none !important;
+}
+
+.code-card code {
+    font-size: 1.4rem;
+}
+
 .recent-work-wrapper .container {
     flex-direction: column;
     padding-bottom: 80px;
@@ -536,6 +829,7 @@ p {
     border: none;
     padding: 0;
     cursor: pointer;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 12px;

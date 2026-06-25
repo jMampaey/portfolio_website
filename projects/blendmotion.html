@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Game Programming Portfolio Jesse Mampaey - Project">
-    <title>God of War | Jesse Mampaey</title>
+    <title>BlendMotion | Jesse Mampaey</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../assets/vendor/prism/prism-tomorrow.min.css">
 </head>
 
 <body>
-    <section class="project-hero debug-grid" style="background-image: url('../assets/images/thumbnails/project-template-image.png');">
+    <section class="project-hero debug-grid">
+        <video class="project-hero-video" autoplay loop muted playsinline>
+            <source src="../assets/videos/projects/blendmotion/hero.mp4" type="video/mp4">
+        </video>
         <nav class="main-nav main-nav--transparent">
             <div class="container">
                 <a href="../index.html" class="nav-logo col-6">Jesse Mampaey</a>
@@ -51,53 +54,49 @@
 
         <div class="project-hero-content">
             <div class="project-hero-card">
-                <h2>TITLE OF PROJECT</h2>
+                <h2>Animation Blending Library</h2>
                 <div class="project-tags">
                     <div class="project-tag">Solo</div>
                     <div class="project-tag">C++</div>
-                    <div class="project-tag">Rendering</div>
+                    <div class="project-tag">Animation</div>
                 </div>
 
                 <!-- INFO ROWS: copy/paste a row to add or remove fields -->
                 <div class="info-row">
                     <span class="info-label">Team size</span>
-                    <span class="info-value">6</span>
+                    <span class="info-separator"></span>
+                    <span class="info-value">Solo</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Role</span>
-                    <span class="info-value">Engine developer</span>
+                    <span class="info-separator"></span>
+                    <span class="info-value">Research and Development</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Duration</span>
-                    <span class="info-value">10 weeks</span>
+                    <span class="info-separator"></span>
+                    <span class="info-value">8 weeks</span>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="project-info-section debug-grid">
-        <div class="project-info-backgrounds">
-            <div class="project-info-bg project-info-bg--summary"></div>
-            <div class="project-info-bg project-info-bg--detail"></div>
+        <div class="project-summary-card">
+            <p>
+                BlendMotion is a standalone framework agnostic animation blending library that I created over 8 weeks in my second year at GMCT on Buas. This project allowed me to display complex and smooth animations in a custom game engine.
+            </p>
         </div>
-        <div class="project-info-content">
-            <div class="project-summary-card">
-                <p>
-                    In one or two sentences what this project was worked on to receive which end product. Emo enim
-                    ipsam voluptatem quia voluptas sit aspernatur.
-                </p>
-            </div>
 
-            <!-- DETAIL CARD: copy/paste this block with a different heading for more sections (e.g. CHALLENGE, SOLUTION) -->
-            <div class="project-detail-card">
-                <h3>Background</h3>
-                <p>
-                    Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-                    ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                </p>
-            </div>
+        <!-- DETAIL CARD: copy/paste this block with a different heading for more sections (e.g. CHALLENGE, SOLUTION) -->
+        <div class="project-detail-card">
+            <h3>Background</h3>
+            <p>
+                Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
+                ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            </p>
         </div>
     </section>
 
@@ -160,8 +159,9 @@
 
     </section>
 
+
     <section class="feature-showcase debug-grid">
-        <img src="../assets/images/thumbnails/project-template-image.png" alt="Template" class="feature-showcase-image">
+        <img src="../assets/images/projects/blendmotion/thumbnail.png" alt="BlendMotion thumbnail" class="feature-showcase-image">
         <div class="feature-showcase-card">
             <h2>NAME OF FEATURE</h2>
             <div class="feature-showcase-columns">

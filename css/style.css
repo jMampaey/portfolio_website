@@ -790,47 +790,94 @@ body.show-grid .debug-grid::after {
 
 .code-section {
     display: flex;
-    gap: 24px;
-    max-width: 1440px;
-    margin: 24px auto 0;
-    padding: 0 112px;
+    gap: 0;
+    margin: 24px 0 0;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 .code-section .project-detail-card {
     flex: 1;
+    background-color: var(--dark-green);
+    border-radius: 0;
+    padding: 90px 80px 90px max(112px, calc(50vw - 608px));
+}
+
+.code-section .project-detail-card h3 {
+    font-family: var(--font-secondary);
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--light-orange);
+    margin: 0 0 24px;
+}
+
+.code-section .project-detail-card p {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--lightest-orange);
+    line-height: 2.6rem;
+    margin: 0 0 16px;
 }
 
 .code-card {
     position: relative;
     flex: 1;
     background-color: var(--darkest-green);
-    border-radius: 16px;
+    border-radius: 0;
+    padding: 60px max(112px, calc(50vw - 608px)) 60px 80px;
+    overflow: auto;
+}
+
+.code-block {
+    position: relative;
+    background-color: var(--dark-green);
+    border-radius: 8px;
     padding: 24px;
     overflow: auto;
 }
 
 .copy-code-button {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 12px;
+    right: 12px;
     font-family: var(--font-secondary);
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--lightest-orange);
-    background-color: var(--dark-green);
+    background-color: var(--darkest-green);
     border: none;
-    border-radius: 8px;
-    padding: 6px 12px;
+    border-radius: 6px;
+    padding: 4px 10px;
     cursor: pointer;
+    opacity: 0.8;
 }
 
 .copy-code-button:hover {
+    opacity: 1;
     background-color: var(--green);
 }
 
-.code-card pre {
+.code-block pre {
     margin: 0;
     background: none !important;
+    counter-reset: line-counter;
+}
+
+.code-line {
+    display: block;
+    counter-increment: line-counter;
+}
+
+.code-line::before {
+    content: counter(line-counter);
+    display: inline-block;
+    width: 2.4rem;
+    margin-right: 1.6rem;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.25);
+    user-select: none;
 }
 
 .code-card code {

@@ -919,8 +919,12 @@ body.show-grid .debug-grid::after {
     padding-bottom: 80px;
 }
 
+.recent-work-wrapper .project:last-of-type {
+    margin-bottom: 0;
+}
+
 .recent-work-wrapper .blog-more-wrapper {
-    margin-top: -56px;
+    margin-top: 0;
 }
 
 .recent-work-wrapper h1 {
@@ -932,6 +936,7 @@ body.show-grid .debug-grid::after {
 }
 
 .project {
+    position: relative;
     background-color: var(--dark-green);
     display: flex;
     gap: 22px;
@@ -949,6 +954,12 @@ body.show-grid .debug-grid::after {
     transform: translateY(-8px);
 }
 
+
+.project-link {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+}
 
 .project-content {
     display: flex;
@@ -1036,6 +1047,7 @@ body.show-grid .debug-grid::after {
 
 .project-image-right {
     position: relative;
+    z-index: 0;
     overflow: hidden;
     border-left: 2px solid var(--darkest-green);
 }
@@ -1050,6 +1062,7 @@ body.show-grid .debug-grid::after {
 
 .project-image-left {
     position: relative;
+    z-index: 0;
     overflow: hidden;
     border-right: 2px solid var(--darkest-green);
 }
@@ -1389,6 +1402,7 @@ body.show-grid .debug-grid::after {
     align-items: center;
     gap: 8px;
     background: none;
+    text-decoration: none;
     border: none;
     cursor: pointer;
     color: var(--light-orange);

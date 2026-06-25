@@ -70,6 +70,34 @@ img {
     --font-secondary: 'Source Code Pro', 'Menlo', monospace;
 }
 
+/* Persistent inner rounded corners at top of content */
+body::after {
+    content: '';
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    height: 12px;
+    pointer-events: none;
+    z-index: 102;
+    background:
+        radial-gradient(circle at bottom right, transparent 12px, #ffffff 12px) 0 0 / 12px 12px no-repeat,
+        radial-gradient(circle at bottom left, transparent 12px, #ffffff 12px) 100% 0 / 12px 12px no-repeat;
+}
+
+/* Persistent white top strip */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background-color: #ffffff;
+    border-radius: 0 0 16px 16px;
+    z-index: 101;
+}
+
 /* Base Styles */
 body {
     font-family: var(--font-primary);
@@ -78,6 +106,7 @@ body {
     margin: 0;
     padding: 24px;
     box-sizing: border-box;
+    background-color: #ffffff;
 }
 
 /* Typography */
@@ -111,8 +140,10 @@ p {
     background-color: var(--lightest-orange);
     border-radius: 12px;
     overflow: hidden;
-    max-height: calc(100vh - 48px);
+    height: calc(100vh - 48px);
     position: relative;
+    margin-top: 0;
+    padding-top: 64px;
 }
 
 /* Noise with light orange color */
@@ -319,7 +350,52 @@ body.show-grid .debug-grid::after {
 
 /* Navigation Bar */
 .main-nav {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    z-index: 100;
     padding: 20px 0;
+    background: none;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.main-nav.nav-scrolled::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(max(112px, calc(50vw - 608px)) - 56px);
+    right: calc(max(112px, calc(50vw - 608px)) - 56px);
+    background-color: var(--lightest-orange);
+    background-image: url('../assets/images/backgrounds/noise-light.png');
+    background-repeat: repeat;
+    border-radius: 0 0 16px 16px;
+    z-index: -1;
+}
+
+.main-nav.nav-scrolled::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 16px;
+    left: calc(max(112px, calc(50vw - 608px)) - 72px);
+    right: calc(max(112px, calc(50vw - 608px)) - 72px);
+    pointer-events: none;
+    z-index: 0;
+    background-color: var(--lightest-orange);
+    background-image: url('../assets/images/backgrounds/noise-light.png');
+    background-repeat: repeat;
+    -webkit-mask:
+        radial-gradient(circle at bottom left, transparent 16px, black 16px) left top / 16px 16px no-repeat,
+        radial-gradient(circle at bottom right, transparent 16px, black 16px) right top / 16px 16px no-repeat;
+    mask:
+        radial-gradient(circle at bottom left, transparent 16px, black 16px) left top / 16px 16px no-repeat,
+        radial-gradient(circle at bottom right, transparent 16px, black 16px) right top / 16px 16px no-repeat;
+}
+
+.main-nav--on-dark {
+    background-color: var(--dark-green);
 }
 
 .nav-logo {
@@ -452,16 +528,9 @@ body.show-grid .debug-grid::after {
 }
 
 .recent-work-wrapper--flush {
-    margin-top: 0;
+    margin-top: 64px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-}
-
-.main-nav--on-dark {
-    background-color: var(--dark-green);
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px 12px 0 0;
 }
 
 .main-nav--on-dark .nav-logo,
@@ -471,11 +540,6 @@ body.show-grid .debug-grid::after {
 
 .main-nav--transparent {
     background: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
 }
 
 .main-nav--transparent .nav-logo,
@@ -487,6 +551,7 @@ body.show-grid .debug-grid::after {
 
 .project-hero {
     position: relative;
+    margin-top: 64px;
     height: calc(100vh - 48px);
     background-size: cover;
     background-position: center;

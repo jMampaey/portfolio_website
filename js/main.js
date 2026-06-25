@@ -1,3 +1,8 @@
+const mainNav = document.querySelector('.main-nav');
+window.addEventListener('scroll', () => {
+    mainNav.classList.toggle('nav-scrolled', window.scrollY > 0);
+}, { passive: true });
+
 document.addEventListener('keydown', (e) => {
     if (e.ctrlKey && e.key === 'g') {
         e.preventDefault();

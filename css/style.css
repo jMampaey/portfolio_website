@@ -805,8 +805,15 @@ body.show-grid .debug-grid::after {
     margin: 0;
 }
 
-.feature-showcase-card .select-project-button {
-    margin-top: 16px;
+.project-features-section .project {
+    transition: none;
+    border: none;
+}
+
+.project-features-section .project:hover {
+    border: none;
+    box-shadow: none;
+    transform: none;
 }
 
 /* Code snippet block: text + syntax-highlighted code */

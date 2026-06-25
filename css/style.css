@@ -237,7 +237,7 @@ p {
 
 /* Debug: Show grid columns (uncomment to visualize) */
 
-.container {
+/* .container {
     position: relative;
 }
 
@@ -259,7 +259,7 @@ p {
             transparent 79.33px,
             transparent calc(79.33px + 24px)
         );
-}
+} */
 
 /* Debug grid for project-page building blocks, matching .container's column positions exactly */
 
@@ -267,7 +267,7 @@ p {
     position: relative;
 }
 
-.debug-grid::after {
+body.show-grid .debug-grid::after {
     content: '';
     position: absolute;
     top: 0;
@@ -631,18 +631,23 @@ p {
 
 .project-detail-card {
     background-color: var(--dark-green);
-    padding: 40px max(112px, calc(50% - 608px)) 40px 40px;
+    padding: 104px max(112px, calc(50% - 608px)) 104px 90px;
 }
 
 .project-detail-card h3 {
-    color: var(--cta-orange);
+    font-family: var(--font-secondary);
+    font-size: 3.2rem;
+    font-weight: 600;
     text-transform: uppercase;
+    color: var(--light-orange);
     margin: 0 0 16px;
 }
 
 .project-detail-card p {
-    color: var(--lightest-orange);
+    font-family: var(--font-primary);
     font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--lightest-orange);
     line-height: 2.6rem;
     margin: 0;
 }

@@ -1,3 +1,10 @@
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === 'g') {
+        e.preventDefault();
+        document.body.classList.toggle('show-grid');
+    }
+});
+
 const hamburger = document.querySelector('.nav-hamburger');
 const navLinks = document.querySelector('.nav-links');
 

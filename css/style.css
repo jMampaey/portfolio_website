@@ -1097,7 +1097,7 @@ body.show-grid .debug-grid::after {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding: 40px;
+    padding: 100px 40px 40px;
     border-radius: 16px;
     position: relative;
 }

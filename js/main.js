@@ -22,7 +22,11 @@ Prism.hooks.add('after-highlight', (env) => {
 
 document.querySelectorAll('.copy-code-button').forEach((button) => {
     button.addEventListener('click', () => {
-        const code = button.closest('.code-card').querySelector('code').textContent;
+        const codeEl = button.closest('.code-card').querySelector('code');
+        const lines = codeEl.querySelectorAll('.code-line');
+        const code = lines.length
+            ? Array.from(lines).map(l => l.textContent).join('\n')
+            : codeEl.textContent;
         navigator.clipboard.writeText(code).then(() => {
             const originalLabel = button.textContent;
             button.textContent = 'Copied!';

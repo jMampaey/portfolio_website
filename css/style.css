@@ -624,9 +624,32 @@ body.show-grid .debug-grid::after {
 }
 
 .project-end-result-section {
-    max-width: 1440px;
-    margin: 24px auto 0;
-    padding: 0 112px;
+    margin: 24px 0 0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.project-end-result-section .project-summary-card {
+    flex: 1;
+    padding: 100px max(112px, calc(50% - 608px));
+}
+
+.project-end-result-section .project-summary-card h3 {
+    font-family: var(--font-secondary);
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--light-orange);
+    margin: 0 0 24px;
+}
+
+.project-end-result-section .project-summary-card p {
+    font-family: var(--font-primary);
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: var(--lightest-orange);
+    line-height: 1.4;
+    margin: 0;
 }
 
 .project-detail-card {

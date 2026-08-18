@@ -1,6 +1,19 @@
 const mainNav = document.querySelector('.main-nav');
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+const NAV_SCROLL_THRESHOLD = 8;
+let lastScrollY = window.scrollY;
 window.addEventListener('scroll', () => {
-    mainNav.classList.toggle('nav-scrolled', window.scrollY > 0);
+    const currentScrollY = window.scrollY;
+    mainNav.classList.toggle('nav-scrolled', currentScrollY > 0);
+
+    if (navLinks.classList.contains('nav-open')) {
+        lastScrollY = currentScrollY;
+    } else if (Math.abs(currentScrollY - lastScrollY) > NAV_SCROLL_THRESHOLD) {
+        mainNav.classList.toggle('nav-hidden', currentScrollY > lastScrollY);
+        lastScrollY = currentScrollY;
+    }
 }, { passive: true });
 
 document.addEventListener('keydown', (e) => {
@@ -9,9 +22,6 @@ document.addEventListener('keydown', (e) => {
         document.body.classList.toggle('show-grid');
     }
 });
-
-const hamburger = document.querySelector('.nav-hamburger');
-const navLinks = document.querySelector('.nav-links');
 
 hamburger.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('nav-open');

@@ -329,7 +329,11 @@ body.show-grid .debug-grid::after {
     z-index: 100;
     padding: 20px 0;
     background: none;
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.main-nav.nav-hidden {
+    transform: translateY(-150%);
 }
 
 .main-nav.nav-scrolled::before {

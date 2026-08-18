@@ -2,7 +2,7 @@ const mainNav = document.querySelector('.main-nav');
 const hamburger = document.querySelector('.nav-hamburger');
 const navLinks = document.querySelector('.nav-links');
 
-const NAV_SCROLL_THRESHOLD = 8;
+const NAV_SCROLL_THRESHOLD = 32;
 let lastScrollY = window.scrollY;
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;

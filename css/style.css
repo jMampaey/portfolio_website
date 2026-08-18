@@ -76,7 +76,7 @@ body {
     font-size: 1.6rem;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 24px;
     box-sizing: border-box;
     background-color: #ffffff;
 }
@@ -112,7 +112,7 @@ p {
     background-color: var(--lightest-orange);
     border-radius: 12px;
     overflow: hidden;
-    height: 100vh;
+    height: calc(100vh - 48px);
     position: relative;
     margin-top: 0;
     padding-top: 88px;
@@ -412,13 +412,13 @@ body.show-grid .debug-grid::after {
 /* Hero Section */
 .hero {
     padding: 0;
-    min-height: calc(100vh - 88px);
+    min-height: calc(100vh - 136px);
     display: flex;
     align-items: stretch;
 }
 
 .hero .container {
-    min-height: calc(100vh - 88px);
+    min-height: calc(100vh - 136px);
     align-items: flex-end;
 }
 
@@ -960,8 +960,8 @@ body.show-grid .debug-grid::after {
     margin-bottom: 40px;
     border-radius: 16px;
     border: solid 2px var(--darkest-green);
-    position: relative;
     overflow: hidden;
+    min-height: 470px;
     transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 

@@ -877,6 +877,8 @@ body.show-grid .debug-grid::after {
 .code-section .project-detail-card {
     flex: 1;
     background-color: var(--dark-green);
+    background-image: url('../assets/images/backgrounds/noise.png');
+    background-repeat: repeat;
     border-radius: 0;
     padding: 90px 80px 90px max(112px, calc(50vw - 608px));
 }
@@ -994,6 +996,16 @@ body.show-grid .debug-grid::after {
     overflow: hidden;
     min-height: 470px;
     transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-features-section .project {
+    background-image: url('../assets/images/backgrounds/noise.png');
+    background-repeat: repeat;
+}
+
+.project-features-section .project--darkest {
+    background-color: var(--darkest-green);
+    background-image: none;
 }
 
 .project:hover {

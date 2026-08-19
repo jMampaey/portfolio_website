@@ -1130,6 +1130,12 @@ body.show-grid .debug-grid::after {
     border-radius: 0 14px 14px 0;
 }
 
+.project-image-right.project-image-right--crop-left img {
+    width: auto;
+    max-width: none;
+    object-position: left center;
+}
+
 .project-image-left {
     position: relative;
     z-index: 0;

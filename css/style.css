@@ -336,7 +336,7 @@ body.show-grid .debug-grid::after {
     transform: translateY(-150%);
 }
 
-.main-nav.nav-scrolled::before {
+.main-nav::before {
     content: '';
     position: absolute;
     top: 0;
@@ -349,6 +349,12 @@ body.show-grid .debug-grid::after {
     border: 2px solid var(--light-orange);
     border-radius: 16px;
     z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.main-nav.nav-scrolled::before {
+    opacity: 1;
 }
 
 .main-nav--on-dark {
@@ -358,22 +364,11 @@ body.show-grid .debug-grid::after {
 }
 
 .main-nav.main-nav--on-dark::before {
-    content: none;
-}
-
-.main-nav.main-nav--on-dark.nav-scrolled::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
     left: calc(max(112px, calc(50vw - 608px)) - 80px);
     right: calc(max(112px, calc(50vw - 608px)) - 80px);
     background-color: var(--dark-green);
     background-image: url('../assets/images/backgrounds/noise.png');
-    background-repeat: repeat;
     border: 2px solid var(--darkest-green);
-    border-radius: 16px;
-    z-index: -1;
 }
 
 .nav-logo {
@@ -521,16 +516,25 @@ body.show-grid .debug-grid::after {
     background: none;
 }
 
-.main-nav--transparent .nav-logo,
+.main-nav--transparent .nav-logo {
+    color: var(--light-orange);
+}
+
 .main-nav--transparent .nav-links a {
     color: var(--lightest-orange);
+}
+
+.main-nav.main-nav--transparent::before {
+    background-color: var(--dark-green);
+    background-image: url('../assets/images/backgrounds/noise.png');
+    border: 2px solid var(--darkest-green);
 }
 
 /* Project hero block */
 
 .project-hero {
     position: relative;
-    margin-top: 64px;
+    margin-top: 0;
     height: calc(100vh - 48px);
     background-size: cover;
     background-position: center;

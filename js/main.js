@@ -2,6 +2,43 @@ const mainNav = document.querySelector('.main-nav');
 const hamburger = document.querySelector('.nav-hamburger');
 const navLinks = document.querySelector('.nav-links');
 
+const SCROLL_OFFSET = 24;
+
+function smoothScrollToElement(target, duration = 600) {
+    const startY = window.scrollY;
+    const targetY = startY + target.getBoundingClientRect().top - SCROLL_OFFSET;
+    const startTime = performance.now();
+
+    function step(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = progress < 0.5
+            ? 4 * progress * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        window.scrollTo(0, startY + (targetY - startY) * eased);
+        if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        history.pushState(null, '', link.getAttribute('href'));
+        smoothScrollToElement(target);
+    });
+});
+
+if (window.location.hash) {
+    const hashTarget = document.querySelector(window.location.hash);
+    if (hashTarget) {
+        window.scrollTo(0, 0);
+        requestAnimationFrame(() => smoothScrollToElement(hashTarget));
+    }
+}
+
 const NAV_SCROLL_THRESHOLD = 32;
 let lastScrollY = window.scrollY;
 window.addEventListener('scroll', () => {

@@ -346,6 +346,7 @@ body.show-grid .debug-grid::after {
     background-color: var(--lightest-orange);
     background-image: url('../assets/images/backgrounds/noise-light.png');
     background-repeat: repeat;
+    border: 2px solid var(--light-orange);
     border-radius: 16px;
     z-index: -1;
 }

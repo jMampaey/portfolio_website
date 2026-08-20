@@ -163,21 +163,16 @@ public:
 
         <!-- FEATURE VARIANT: IMAGE LEFT -->
         <div class="project">
-            <div class="project-image-left">
+            <div class="project-image-left project-image-left--crop-right">
                 <img src="../assets/images/projects/ohmeowgod/undo_redo.png" alt="Undo Redo">
             </div>
             <div class="project-content">
                 <h2>Undo / Redo</h2>
                 <p>
-                    Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-                    ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    The feature to have undo and redo in the engine was one that came up a lot during the first part of the project. The other users were used to that feature from other engines, but we did not have this yet. So this was something that should be added as fast as possible.
                 </p>
                 <p>
-                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                    quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                    voluptatem.
+                    The way I implemented this was quite naive at the time but it worked (a bit slow though). I used a circular buffer to allow for a certain amount of actions to be undone and redone again. The thing that was stored here was a snapshot of the entire editor state. This is the part that was naive, because there already was a way to save and restore this. In the end this was not the best solution for this problem. It would have been better to make use of the command pattern for every action that can happen in the editor. This way you just need to store what the command was that was used and how to reverse that command.
                 </p>
             </div>
         </div>
@@ -187,31 +182,25 @@ public:
 
 
     <section class="feature-showcase debug-grid">
-        <img src="../assets/images/projects/blendmotion/thumbnail.png" alt="BlendMotion thumbnail"
-            class="feature-showcase-image">
+        <video class="feature-showcase-image" autoplay loop muted playsinline>
+            <source src="../assets/videos/projects/ohmeowgod/animation_syncing.mp4" type="video/mp4">
+        </video>
         <div class="feature-showcase-card">
             <h2>Animation Syncing</h2>
             <div class="feature-showcase-columns">
                 <div class="feature-showcase-column">
-                    <h3>Subtitle</h3>
+                    <h3>Multiple states</h3>
                     <p>
-                        Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-                        est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                        During the first stages of this project we decided that the main character would have multiple different states he could be in. The artists wanted to make this distinction by giving the main character accessories to wear in those different stages. In this stage it was not really clear what those accessories would look like which made it a lot harder to come up with a way to make sure this would work.
                     </p>
                 </div>
                 <div class="feature-showcase-column">
-                    <h3>Subtitle</h3>
+                    <h3>Sockets</h3>
                     <p>
-                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-                        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                        voluptatem.
+                        The first approach was using sockets to attach something like a helmet to the character. I made a quick prototype which was working fine, until we heard from the artist that the accessories would have their own (small) animations. This made the socket approach a lot harder.
                     </p>
                     <p>
-                        Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-                        est, qui dolorem ipsum quia dolor sit amet, consectetur.
+                        This meant that the socket approach was not going to work for the things that the artist want out of the main character. The character and the accessories needed to have their own skeleton animations with a system to make sure that they are both in sync.
                     </p>
                 </div>
             </div>
@@ -222,40 +211,44 @@ public:
         <div class="project-detail-card">
             <h3>Animation Syncing</h3>
             <p>
-                Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-                quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-                labore et dolore magnam aliquam quaerat voluptatem.
+                The way I implemented this was using a combination of the the [animation state machine] in BlendMotion and the certain function calls to handle going in and out of a certain character state (with the corresponding accessories). There also needed to be an animation to swap between the states. This was basically played as a transition between the states. 
             </p>
             <p>
-                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                This system also made sure that the states and accessories that were not in used were not updated to make this system more performant. The code to actually change form ended up being pretty simple. The code snippet shows the call to the function to change forms and also how that function works. In the end changing to a form is also not that special. It is just setting some variables in the CharacterFormComponent and set some timing values to make sure the transition works correct.
             </p>
         </div>
         <div class="code-card">
             <div class="code-block">
                 <button class="copy-code-button">Copy</button>
-                <pre><code class="language-cpp">enum Level {
-    LOW = 1,
-    MEDIUM,
-    HIGH
-};
-
-int main() {
-    enum Level myVar = MEDIUM;
-
-    switch (myVar) {
-        case 1:
-            cout &lt;&lt; "Low Level";
-            break;
-        case 2:
-            cout &lt;&lt; "Medium level";
-            break;
-        case 3:
-            cout &lt;&lt; "High Level";
-            break;
+                <pre><code class="language-cpp">if (input.switchFormPressed && characterComp.moveState.isGrounded && formInput)
+    {
+        characterForm.NextForm();
     }
-    return 0;
+    
+void CharacterFormComponent::NextForm()
+{
+    switch (form)
+    {
+        case CharacterForm::NONE:
+            ChangeToStrengthForm();
+            break;
+        case CharacterForm::STRENGTH:
+            ChangeToManipulateForm();
+            break;
+        default:
+            ChangeToNoneForm();
+    }
+}
+
+void CharacterFormComponent::ChangeToStrengthForm()
+{
+    if (form == CharacterForm::STRENGTH) return;
+    if (formChangeLockout > 0.f) return;
+
+    previousForm = form;
+    form = CharacterForm::STRENGTH;
+    isChangingForm = true;
+    formChangeLockout = 2.f * fadeDuration;  // x2 because the duration is 2 transitions
 }</code></pre>
             </div>
         </div>
@@ -265,13 +258,8 @@ int main() {
         <div class="project-summary-card">
             <h3>End Result</h3>
             <p>
-                In one or two sentences what this project was worked on to receive which end product. Emo enim ipsam
-                voluptatem quia voluptas sit aspernatur.
+                During this project I was working a lot in service of other in my role as lead engine developer. When people had issues with the engine or wanted something to be added, they came to me, which meant that I learned a lot about how to make software that other people need to use to make something cool!
             </p>
-            <a href="https://github.com/jMampaey" class="select-project-button" target="_blank"
-                rel="noopener noreferrer">
-                GitHub project
-            </a>
         </div>
     </section>
 

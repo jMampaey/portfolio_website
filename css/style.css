@@ -811,6 +811,10 @@ body.show-grid .debug-grid::after {
     object-fit: cover;
 }
 
+video.feature-showcase-image {
+    object-position: center bottom;
+}
+
 .feature-showcase-card {
     background-color: var(--dark-green);
     padding: 90px max(112px, calc(50% - 608px));
@@ -1149,6 +1153,14 @@ body.show-grid .debug-grid::after {
     object-fit: cover;
     display: block;
     border-radius: 14px 0 0 14px;
+}
+
+.project-image-left.project-image-left--crop-right img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    max-width: none;
 }
 
 /* About Section */

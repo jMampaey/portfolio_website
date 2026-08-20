@@ -811,8 +811,20 @@ body.show-grid .debug-grid::after {
     object-fit: cover;
 }
 
-video.feature-showcase-image {
-    object-position: center bottom;
+.feature-showcase-media {
+    position: relative;
+    height: 800px;
+    overflow: hidden;
+}
+
+.feature-showcase-media .feature-showcase-image {
+    position: absolute;
+    left: 50%;
+    bottom: -180px;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 2560px;
+    height: calc(2560px * 800 / 1496);
 }
 
 .feature-showcase-card {

@@ -1301,6 +1301,12 @@ body.show-grid .debug-grid::after {
     gap: 16px;
 }
 
+.skills-card .half-container-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .skill-bar {
     display: grid;
     grid-template-columns: auto 1fr;

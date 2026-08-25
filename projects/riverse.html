@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Game Programming Portfolio Jesse Mampaey - Project">
+    <title>Riverse | Jesse Mampaey</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/prism/prism-tomorrow.min.css">
+</head>
+
+<body>
+    <section class="project-hero debug-grid">
+        <video class="project-hero-video" autoplay loop muted playsinline>
+            <source src="../assets/videos/projects/ohmeowgod/trailer.mp4" type="video/mp4">
+        </video>
+        <nav class="main-nav main-nav--transparent">
+            <div class="container">
+                <a href="../index.html" class="nav-logo col-6">Jesse Mampaey</a>
+                <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links col-6">
+                    <li>
+                        <a href="../projects.html">
+                            <img src="../assets/images/icons/x-button.svg" alt="" class="nav-icon">
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html#about">
+                            <img src="../assets/images/icons/square-button.svg" alt="" class="nav-icon">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html#blog">
+                            <img src="../assets/images/icons/triangle-button.svg" alt="" class="nav-icon">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html#contact">
+                            <img src="../assets/images/icons/circle-button.svg" alt="" class="nav-icon">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="project-hero-content">
+            <div class="project-hero-card">
+                <h2>Oh! Meow God</h2>
+                <div class="project-tags">
+                    <div class="project-tag">Team</div>
+                    <div class="project-tag">C++</div>
+                    <div class="project-tag">Platformer</div>
+                </div>
+
+                <!-- INFO ROWS: copy/paste a row to add or remove fields -->
+                <div class="info-row">
+                    <span class="info-label">Team size</span>
+                    <span class="info-separator"></span>
+                    <span class="info-value">17 Students</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Role</span>
+                    <span class="info-separator"></span>
+                    <span class="info-value">Lead engine programmer</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Duration</span>
+                    <span class="info-separator"></span>
+                    <span class="info-value">8 weeks</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-info-section debug-grid">
+        <div class="project-summary-card">
+            <p>
+                Oh! Meow God is a platformer made in a custom engine during my second year at BUas with a team of 17
+                students. The game is a 3D puzzle-platformer where you help the god Kronos reach his destination safely!
+            </p>
+        </div>
+
+        <div class="project-detail-card">
+            <h3>Background</h3>
+            <p>
+                This game was created with a team of 3 Designers, 5 Artists and 9 programmers in a custom game engine
+                that was created during a previous project by 7 of the programmers. The engine had a lot of features
+                already but has been improved over the 8 weeks for this project.
+            </p>
+            <br>
+            <p>
+                The biggest challenge for me during this project was making a system that allowed the main character to
+                have multiple attachments that show in which state the character is. This system had to make sure that
+                the animations were always in sync.
+            </p>
+        </div>
+    </section>
+
+    <section class="project-features-section debug-grid">
+
+        <div class="project project--darkest">
+            <div class="project-content">
+                <h2>Curve editor</h2>
+                <p>
+                    The curve editor was a feature that was requested by other programmers to be used in the features they were working on.
+                    In the end it was used to manipulate a lot of the values in the particle system. An example of this implementation is the Speed variable. A simple s-curve has been used here to decrease the speed in a gradual way. 
+                </p>
+                <p>
+                    The editor has 2 phases for the curves. The first phase shows a small preview of the curve (which can also be copied over to another curve), while the second phases shows the full editable curve. This allows for move flexibility during the editing of the curve but it does not make it too big to see while the curve does not need any changes. It is also possible to add and remove points and change the tangents at a point.
+                </p>
+            </div>
+            <div class="project-image-right project-image-right--crop-left">
+                <img src="../assets/images/projects/ohmeowgod/curve_editor.png" alt="Curve Editor">
+            </div>
+        </div>
+        <section class="code-section code-section--reverse debug-grid">
+            <div class="project-detail-card">
+                <h3>Curve Editor - Implementation</h3>
+                <p>
+                    To use this curve in a component is very simple. Just change a float value in the property to a CurveFloat value. This is a specific class that holds the curve data and can be used to evaluate over time. 
+                </p>
+                <p>
+                    The Evaluate function does all the work to determine where on the curve you are and should be used in an update function of a system to determine what to do with that value. The people that implemented this into their features were satisfied with how to use it and were able to do all the things they wanted with it.
+                </p>
+            </div>
+            <div class="code-card">
+                <div class="code-block">
+                    <button class="copy-code-button">Copy</button>
+                    <pre><code class="language-cpp">class CurveFloat
+{
+public:
+    std::vector<CurveKey> Keys;
+
+    float Evaluate(float time) const;
+
+    int AddKey(float time, float value);
+    void RemoveKey(int index);
+    void SortKeys();
+    void RecalculateAutoTangents();
+
+    bool Empty() const;
+    float StartTime() const;
+    float EndTime() const;
+    float MinValue() const;
+    float MaxValue() const;
+};                    </code></pre>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- /FEATURE VARIANT: IMAGE RIGHT -->
+
+
+        <!-- FEATURE VARIANT: IMAGE LEFT -->
+        <div class="project">
+            <div class="project-image-left project-image-left--crop-right">
+                <img src="../assets/images/projects/ohmeowgod/undo_redo.png" alt="Undo Redo">
+            </div>
+            <div class="project-content">
+                <h2>Undo / Redo</h2>
+                <p>
+                    The feature to have undo and redo in the engine was one that came up a lot during the first part of the project. The other users were used to that feature from other engines, but we did not have this yet. So this was something that should be added as fast as possible.
+                </p>
+                <p>
+                    The way I implemented this was quite naive at the time but it worked (a bit slow though). I used a circular buffer to allow for a certain amount of actions to be undone and redone again. The thing that was stored here was a snapshot of the entire editor state. This is the part that was naive, because there already was a way to save and restore this. In the end this was not the best solution for this problem. It would have been better to make use of the command pattern for every action that can happen in the editor. This way you just need to store what the command was that was used and how to reverse that command.
+                </p>
+            </div>
+        </div>
+        <!-- /FEATURE VARIANT: IMAGE LEFT -->
+
+    </section>
+
+
+    <section class="feature-showcase debug-grid">
+        <div class="feature-showcase-media">
+            <video class="feature-showcase-image" autoplay loop muted playsinline>
+                <source src="../assets/videos/projects/ohmeowgod/animation_syncing.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="feature-showcase-card">
+            <h2>Animation Syncing</h2>
+            <div class="feature-showcase-columns">
+                <div class="feature-showcase-column">
+                    <h3>Multiple states</h3>
+                    <p>
+                        During the first stages of this project we decided that the main character would have multiple different states he could be in. The artists wanted to make this distinction by giving the main character accessories to wear in those different stages. In this stage it was not really clear what those accessories would look like which made it a lot harder to come up with a way to make sure this would work.
+                    </p>
+                </div>
+                <div class="feature-showcase-column">
+                    <h3>Sockets</h3>
+                    <p>
+                        The first approach was using sockets to attach something like a helmet to the character. I made a quick prototype which was working fine, until we heard from the artist that the accessories would have their own (small) animations. This made the socket approach a lot harder.
+                    </p>
+                    <p>
+                        This meant that the socket approach was not going to work for the things that the artist want out of the main character. The character and the accessories needed to have their own skeleton animations with a system to make sure that they are both in sync.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="code-section debug-grid">
+        <div class="project-detail-card">
+            <h3>Animation Syncing</h3>
+            <p>
+                The way I implemented this was using a combination of the the [animation state machine] in BlendMotion and the certain function calls to handle going in and out of a certain character state (with the corresponding accessories). There also needed to be an animation to swap between the states. This was basically played as a transition between the states. 
+            </p>
+            <p>
+                This system also made sure that the states and accessories that were not in used were not updated to make this system more performant. The code to actually change form ended up being pretty simple. The code snippet shows the call to the function to change forms and also how that function works. In the end changing to a form is also not that special. It is just setting some variables in the CharacterFormComponent and set some timing values to make sure the transition works correct.
+            </p>
+        </div>
+        <div class="code-card">
+            <div class="code-block">
+                <button class="copy-code-button">Copy</button>
+                <pre><code class="language-cpp">if (input.switchFormPressed && characterComp.moveState.isGrounded && formInput)
+    {
+        characterForm.NextForm();
+    }
+    
+void CharacterFormComponent::NextForm()
+{
+    switch (form)
+    {
+        case CharacterForm::NONE:
+            ChangeToStrengthForm();
+            break;
+        case CharacterForm::STRENGTH:
+            ChangeToManipulateForm();
+            break;
+        default:
+            ChangeToNoneForm();
+    }
+}
+
+void CharacterFormComponent::ChangeToStrengthForm()
+{
+    if (form == CharacterForm::STRENGTH) return;
+    if (formChangeLockout > 0.f) return;
+
+    previousForm = form;
+    form = CharacterForm::STRENGTH;
+    isChangingForm = true;
+    formChangeLockout = 2.f * fadeDuration;  // x2 because the duration is 2 transitions
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-end-result-section debug-grid">
+        <div class="project-summary-card">
+            <h3>End Result</h3>
+            <p>
+                During this project I was working a lot in service of other in my role as lead engine developer. When people had issues with the engine or wanted something to be added, they came to me, which meant that I learned a lot about how to make software that other people need to use to make something cool!
+            </p>
+            <a href="https://buas.itch.io/oh-meow-god" class="select-project-button" target="_blank" rel="noopener noreferrer">
+                Oh! Meow God - Itch.IO page
+            </a>
+        </div>
+    </section>
+
+    <section class="contact noise-light">
+        <div class="container">
+            <div class="contact-left col-6">
+                <h2 class="contact-heading">Feel free to reach out!</h2>
+            </div>
+            <div class="contact-right col-6">
+                <div class="contact-card">
+                    <h3 class="contact-name">Jesse Mampaey</h3>
+                    <div class="contact-divider"></div>
+                    <p class="contact-email">jesse.mampaey@gmail.com</p>
+                    <p class="contact-location">Based in The Netherlands & available worldwide</p>
+                    <div class="contact-links">
+                        <a href="https://github.com/jMampaey" class="contact-link">
+                            <img src="../assets/images/icons/x-button.svg" alt="" class="contact-icon">
+                            Github
+                        </a>
+                        <a href="https://www.linkedin.com/in/jessemampaey/" class="contact-link">
+                            <img src="../assets/images/icons/square-button.svg" alt="" class="contact-icon">
+                            LinkedIn
+                        </a>
+                        <a href="mailto:jesse.mampaey@gmail.com" class="contact-link">
+                            <img src="../assets/images/icons/triangle-button.svg" alt="" class="contact-icon">
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <span class="footer-copyright">© 2026 Jesse Mampaey</span>
+            <span class="footer-credit">Webdesign by <a href="https://design-on.online"
+                    class="footer-link">design-on.online</a></span>
+            <a href="#" class="footer-link">Privacy statement</a>
+        </div>
+    </footer>
+
+    <script src="../assets/vendor/prism/prism-core.min.js"></script>
+    <script src="../assets/vendor/prism/prism-clike.min.js"></script>
+    <script src="../assets/vendor/prism/prism-c.min.js"></script>
+    <script src="../assets/vendor/prism/prism-cpp.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

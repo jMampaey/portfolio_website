@@ -61,7 +61,6 @@
                     <div class="project-tag">Animation</div>
                 </div>
 
-                <!-- INFO ROWS: copy/paste a row to add or remove fields -->
                 <div class="info-row">
                     <span class="info-label">Team size</span>
                     <span class="info-separator"></span>
@@ -89,7 +88,6 @@
             </p>
         </div>
 
-        <!-- DETAIL CARD: copy/paste this block with a different heading for more sections (e.g. CHALLENGE, SOLUTION) -->
         <div class="project-detail-card">
             <h3>Background</h3>
             <p>
@@ -104,125 +102,81 @@
 
     <section class="project-features-section debug-grid">
 
-        <!-- FEATURE VARIANT: IMAGE RIGHT -->
         <div class="project project--darkest">
             <div class="project-content">
-                <h2>2D blend spaces</h2>
+                <h2>Bone Masking</h2>
                 <p>
-                    Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-                    ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    One of the features I added during this project was bone masking. This feature allows animators to create separate animations for actions without having to make the combination of all of those actions. For example a full locomotion animation set and a separate aim animation. They can be combined using layers and bone masking.
                 </p>
                 <p>
-                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                    quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                    voluptatem.
+                    In the video there is an example of a walking animation combined with a aim animation. The animation for aiming does not contain any walk movement, so these animations are blended together using the bone masks. Using this system, it is possible to select the bones on which the animation should be played, which makes this very versatile. This example uses only two animations, but by adding more layers it is possible to create more complex behaviors. 
                 </p>
             </div>
-            <div class="project-image-right">
-                <img src="../assets/images/thumbnails/project-template-image.png" alt="Template">
+            <div class="project-image-right project-image-right--crop-left">
+                <video autoplay loop muted playsinline>
+                    <source src="../assets/videos/projects/blendmotion/bonemasking.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
-        <!-- /FEATURE VARIANT: IMAGE RIGHT -->
 
 
-        <!-- FEATURE VARIANT: IMAGE LEFT -->
         <div class="project">
-            <div class="project-image-left">
-                <img src="../assets/images/thumbnails/project-template-image.png" alt="Template">
+            <div class="project-image-left project-image-left--crop-right">
+                <video autoplay loop muted playsinline>
+                    <source src="../assets/videos/projects/blendmotion/layeredmasks.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="project-content">
-                <h2>Bone masking</h2>
+                <h2>Animation statemachines</h2>
                 <p>
-                    Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                    magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-                    ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    One of the things that make this animation system work, is the addition of animation statemachines. These statemachines allow for way more complex behaviors. It allows the user to display different animations based on certain criteria. User input is an example that can be used to differentiate the animation that should be played. 
                 </p>
                 <p>
-                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                    quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                    voluptatem.
+                    Having a character that has the option to hold a weapon and attack with it is something that was made possible by the animation statemachines. The video shows how the weapon can be attached to one of 2 sockets and when it is attached to the hand, it can be used to create an attack. By setting up rules and conditions for the transitions between the states, this system can handle almost anything you want as long as you can make determine what animations should be played at what time.
                 </p>
             </div>
         </div>
-        <!-- /FEATURE VARIANT: IMAGE LEFT -->
 
     </section>
 
 
     <section class="feature-showcase debug-grid">
-        <img src="../assets/images/projects/blendmotion/thumbnail.png" alt="BlendMotion thumbnail" class="feature-showcase-image">
+        <div class="feature-showcase-media">
+            <video class="feature-showcase-image" autoplay loop muted playsinline>
+                <source src="../assets/videos/projects/blendmotion/2DTriangulation.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="feature-showcase-card">
-            <h2>Animation statemachines</h2>
+            <h2>2D blendspaces</h2>
             <div class="feature-showcase-columns">
                 <div class="feature-showcase-column">
-                    <h3>Subtitle</h3>
                     <p>
-                        Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-                        est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                        The most important feature in this library was the ability to blend 2 or more animations together to get smooth animations. There are multiple ways to blend animations together. The two I decided to focus on were 1D and 2D blendspaces. Especially the 2D blendspaces are interesting because there are a lot of different techniques to blend the animations. Because this project started out as research there is the option to choose which technique gets used to blend the animations together.
                     </p>
                 </div>
                 <div class="feature-showcase-column">
-                    <h3>Subtitle</h3>
                     <p>
-                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-                        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                        voluptatem.
-                    </p>
-                    <p>
-                        Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-                        est, qui dolorem ipsum quia dolor sit amet, consectetur.
+                        The video above shows one of the 2D blendspace techniques on a locomotion animation set. This technique requires a minimum of 3 animations to start blending them together, but has the possibility to blend with a lot more animations. Different blend techniques have different rules as to how the animations should be blended together. Some techniques have falloffs, while other techniques have more animations with influence.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="code-section debug-grid">
+    <section class="code-section code-section--media debug-grid">
         <div class="project-detail-card">
-            <h3>Animation statemachines</h3>
+            <h3>2D blendspaces</h3>
             <p>
-                Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-                quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-                labore et dolore magnam aliquam quaerat voluptatem.
+                There are 2 different variables used for the blending. For example an x and y input direction. These variables create a position on a 2D grid which is used to determine how much of what animations should be played. The user determines what animation plays at what position of the grid.
             </p>
             <p>
-                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                The video shows a visualization of the 2D blend space with a couple of animations in there. The video shows a character moving around and a Blend Space Visualizer panel that shows a triangulation for the 2D blend space which is setup with an idle, forward, sprint, left stride and right stride animation. You can also see the target which is the actual controller input relative to the forward of the character.
             </p>
         </div>
-        <div class="code-card">
-            <div class="code-block">
-                <button class="copy-code-button">Copy</button>
-                <pre><code class="language-cpp">enum Level {
-    LOW = 1,
-    MEDIUM,
-    HIGH
-};
-
-int main() {
-    enum Level myVar = MEDIUM;
-
-    switch (myVar) {
-        case 1:
-            cout &lt;&lt; "Low Level";
-            break;
-        case 2:
-            cout &lt;&lt; "Medium level";
-            break;
-        case 3:
-            cout &lt;&lt; "High Level";
-            break;
-    }
-    return 0;
-}</code></pre>
-            </div>
+        <div class="code-video">
+            <video autoplay loop muted playsinline>
+                <source src="../assets/videos/projects/blendmotion/blendspace_visual.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 

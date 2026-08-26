@@ -1366,7 +1366,7 @@ body.show-grid .debug-grid::after {
 .skill-bar-row {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 12px;
+    gap: 8px;
     align-items: center;
 }
 
@@ -1380,7 +1380,7 @@ body.show-grid .debug-grid::after {
 .skill-name {
     font-family: var(--font-secondary);
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1;
     color: var(--lightest-orange);
     letter-spacing: 0.05em;
@@ -1405,7 +1405,7 @@ body.show-grid .debug-grid::after {
 .skill-value {
     font-family: var(--font-primary);
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 400;
     color: var(--lightest-orange);
     min-width: 30px;
     text-align: right;
@@ -1870,12 +1870,13 @@ body.show-grid .debug-grid::after {
 
     /* --- Projects --- */
     .recent-work-wrapper .container {
-        padding: 0 24px 32px;
-        gap: 32px;
+        padding: 0 24px;
+        gap: 0;
     }
 
     .recent-work-wrapper h1 {
         font-size: 3.6rem;
+        margin-bottom: 32px;
     }
 
     .project {
@@ -1883,8 +1884,18 @@ body.show-grid .debug-grid::after {
         margin-bottom: 0;
     }
 
+    .recent-work-wrapper .project + .project {
+        margin-top: 8px;
+    }
+
     .recent-work-wrapper .blog-more-wrapper {
-        margin-top: 0;
+        margin-top: 16px;
+    }
+
+    /* --- More button (shared) --- */
+    .blog-more-wrapper {
+        margin-top: 16px;
+        margin-bottom: 40px;
     }
 
     .project-content {
@@ -1979,6 +1990,14 @@ body.show-grid .debug-grid::after {
         padding: 32px 24px;
     }
 
+    .about-content .half-container-left {
+        padding: 0 24px;
+    }
+
+    .education-card .half-container-right {
+        padding: 40px 16px;
+    }
+
     .about-content,
     .skills-card,
     .education-card,
@@ -1993,19 +2012,20 @@ body.show-grid .debug-grid::after {
         padding: 0;
     }
 
-    .photo-card     { order: 1; }
-    .about-content  { order: 2; }
-    .education-card { order: 3; }
+    .about-content  { order: 1; }
+    .education-card { order: 2; }
+    .photo-card     { order: 3; }
     .skills-card    { order: 4; }
 
     /* --- Blog --- */
     .sharing-knowledge .container {
         padding: 0 24px;
-        gap: 32px;
+        gap: 0;
     }
 
     .sharing-knowledge-title {
         font-size: 3.6rem;
+        margin-bottom: 32px;
     }
 
     .blog-cards {
@@ -2103,16 +2123,17 @@ body.show-grid .debug-grid::after {
 
     /* --- Section title top spacing --- */
     .recent-work-wrapper h1 {
-        margin-top: 88px;
+        margin-top: 40px;
     }
 
     .about-content {
-        padding-top: 64px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     .sharing-knowledge {
-        padding-top: 64px;
-        padding-bottom: 32px;
+        padding-top: 40px;
+        padding-bottom: 0;
     }
 
     .contact .container {

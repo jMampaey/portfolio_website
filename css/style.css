@@ -1776,6 +1776,10 @@ body.show-grid .debug-grid::after {
         transition: opacity 0.3s ease;
     }
 
+    .main-nav--on-dark .nav-hamburger-label-text {
+        color: var(--lightest-orange);
+    }
+
     .nav-hamburger-label-text--close {
         opacity: 0;
     }
@@ -1825,6 +1829,11 @@ body.show-grid .debug-grid::after {
     .nav-links .nav-icon {
         width: 24px;
         height: 24px;
+    }
+
+    .main-nav--on-dark .nav-links {
+        background-color: var(--dark-green);
+        background-image: url('../assets/images/backgrounds/noise.png');
     }
 
     /* --- Hero --- */
@@ -2118,6 +2127,7 @@ body.show-grid .debug-grid::after {
 
     .recent-work-wrapper--flush {
         margin-top: 0;
+        padding-top: 66px;
     }
 
     /* --- Section title top spacing --- */

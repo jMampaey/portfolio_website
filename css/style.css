@@ -1701,6 +1701,7 @@ body.show-grid .debug-grid::after {
     }
 
     .homepage-wrapper {
+        height: calc(100vh - 16px);
         max-height: none;
     }
 
@@ -1770,9 +1771,14 @@ body.show-grid .debug-grid::after {
     }
 
     /* --- Hero --- */
+    .hero {
+        min-height: calc(100vh - 104px);
+    }
+
     .hero .container {
         flex-direction: column;
         align-items: flex-start;
+        justify-content: space-between;
         min-height: unset;
         padding: 0 24px;
         gap: 0;
@@ -1783,6 +1789,14 @@ body.show-grid .debug-grid::after {
         width: 100%;
         padding-top: 16px;
         padding-bottom: 24px;
+    }
+
+    .hero h3 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 2.8rem;
     }
 
     .hero-image {
@@ -1802,6 +1816,10 @@ body.show-grid .debug-grid::after {
         gap: 32px;
     }
 
+    .recent-work-wrapper h1 {
+        font-size: 3.6rem;
+    }
+
     .project {
         flex-direction: column;
         margin-bottom: 0;
@@ -1817,10 +1835,32 @@ body.show-grid .debug-grid::after {
         padding: 32px 24px;
     }
 
+    .project-content h2 {
+        font-size: 2rem;
+    }
+
+    .project-tag {
+        font-size: 1.5rem;
+    }
+
+    .project-content p {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    .select-project-button {
+        font-size: 1.5rem;
+    }
+
+    .blog-more-btn {
+        font-size: 1.5rem;
+    }
+
     .project-image-right,
     .project-image-left {
         flex: 0 0 auto;
         width: 100%;
+        height: 220px;
         order: -1;
         border-left: none;
         border-right: none;
@@ -1837,6 +1877,37 @@ body.show-grid .debug-grid::after {
     .about-section {
         flex-direction: column;
         gap: 8px;
+    }
+
+    .photo-card img {
+        object-position: center;
+    }
+
+    .about-content h1 {
+        font-size: 3.6rem;
+    }
+
+    .about-content p {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    .education-text h4 {
+        font-size: 1.5rem;
+    }
+
+    .education-text p {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    .skill-name {
+        font-size: 1.5rem;
+    }
+
+    .skill-value {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
     }
 
     .half-container {
@@ -1858,6 +1929,12 @@ body.show-grid .debug-grid::after {
         width: 100%;
     }
 
+    .about-content,
+    .skills-card,
+    .education-card {
+        padding: 0;
+    }
+
     .photo-card     { order: 1; }
     .about-content  { order: 2; }
     .education-card { order: 3; }
@@ -1866,6 +1943,11 @@ body.show-grid .debug-grid::after {
     /* --- Blog --- */
     .sharing-knowledge .container {
         padding: 0 24px;
+        gap: 32px;
+    }
+
+    .sharing-knowledge-title {
+        font-size: 3.6rem;
     }
 
     .blog-cards {
@@ -1873,8 +1955,29 @@ body.show-grid .debug-grid::after {
         gap: 32px;
     }
 
+    .blog-card-thumbnail {
+        height: 220px;
+    }
+
     .blog-card-body {
         padding: 32px 24px;
+    }
+
+    .blog-card-title {
+        font-size: 2rem;
+    }
+
+    .blog-tag {
+        font-size: 1.5rem;
+    }
+
+    .blog-card-description {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    .blog-select-btn {
+        font-size: 1.5rem;
     }
 
     .blog-more-wrapper {
@@ -1906,6 +2009,26 @@ body.show-grid .debug-grid::after {
 
     .contact-heading {
         padding-left: 0;
+        font-size: 3.6rem;
+    }
+
+    .contact-name {
+        font-size: 2.8rem;
+    }
+
+    .contact-email {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    .contact-location {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    .contact-link {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
     }
 
     /* --- Section gaps --- */
@@ -1931,6 +2054,7 @@ body.show-grid .debug-grid::after {
 
     .sharing-knowledge {
         padding-top: 64px;
+        padding-bottom: 32px;
     }
 
     .contact .container {

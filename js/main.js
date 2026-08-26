@@ -60,9 +60,17 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-hamburger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('nav-open');
+function setNavOpen(isOpen) {
+    navLinks.classList.toggle('nav-open', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
+}
+
+hamburger.addEventListener('click', () => {
+    setNavOpen(!navLinks.classList.contains('nav-open'));
+});
+
+navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setNavOpen(false));
 });
 
 Prism.hooks.add('after-highlight', (env) => {

@@ -1407,7 +1407,6 @@ body.show-grid .debug-grid::after {
     font-size: 1.6rem;
     font-weight: 400;
     color: var(--lightest-orange);
-    min-width: 30px;
     text-align: right;
 }
 
@@ -1838,7 +1837,7 @@ body.show-grid .debug-grid::after {
         align-items: flex-start;
         justify-content: space-between;
         min-height: unset;
-        padding: 0 24px;
+        padding: 0 16px;
         gap: 0;
     }
 
@@ -1870,7 +1869,7 @@ body.show-grid .debug-grid::after {
 
     /* --- Projects --- */
     .recent-work-wrapper .container {
-        padding: 0 24px;
+        padding: 0 16px;
         gap: 0;
     }
 
@@ -1885,7 +1884,7 @@ body.show-grid .debug-grid::after {
     }
 
     .recent-work-wrapper .project + .project {
-        margin-top: 8px;
+        margin-top: 16px;
     }
 
     .recent-work-wrapper .blog-more-wrapper {
@@ -2019,7 +2018,7 @@ body.show-grid .debug-grid::after {
 
     /* --- Blog --- */
     .sharing-knowledge .container {
-        padding: 0 24px;
+        padding: 0 16px;
         gap: 0;
     }
 

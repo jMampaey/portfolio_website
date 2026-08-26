@@ -1735,7 +1735,7 @@ body.show-grid .debug-grid::after {
     .main-nav .container {
         position: relative;
         align-items: center;
-        padding: 0 24px;
+        padding: 0 32px;
     }
 
     .main-nav--on-dark {
@@ -1757,12 +1757,13 @@ body.show-grid .debug-grid::after {
         background: none;
         border: none;
         cursor: pointer;
-        padding: 8px;
+        padding: 8px 0;
         z-index: 60;
     }
 
     .nav-hamburger-label {
         display: inline-grid;
+        text-align: right;
     }
 
     .nav-hamburger-label-text {

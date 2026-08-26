@@ -63,6 +63,7 @@ document.addEventListener('keydown', (e) => {
 function setNavOpen(isOpen) {
     navLinks.classList.toggle('nav-open', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.classList.toggle('nav-scroll-lock', isOpen);
 }
 
 hamburger.addEventListener('click', () => {

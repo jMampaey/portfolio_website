@@ -82,6 +82,25 @@ body {
     background-color: #ffffff;
 }
 
+body.nav-scroll-lock {
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-color: #ffffff;
+    z-index: 40;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+body.nav-scroll-lock::before {
+    opacity: 1;
+}
+
 /* Typography */
 h1 {
     font-family: var(--font-secondary);
@@ -1715,6 +1734,7 @@ body.show-grid .debug-grid::after {
 
     .main-nav .container {
         position: relative;
+        align-items: center;
         padding: 0 24px;
     }
 
@@ -1748,26 +1768,23 @@ body.show-grid .debug-grid::after {
     .nav-hamburger-label-text {
         grid-area: 1 / 1;
         font-family: var(--font-secondary);
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         font-weight: 600;
         letter-spacing: 0;
         line-height: 1;
-        color: var(--darkest-green);
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        color: var(--dark-green);
+        transition: opacity 0.3s ease;
     }
 
     .nav-hamburger-label-text--close {
-        transform: translateY(-8px);
         opacity: 0;
     }
 
     .nav-hamburger[aria-expanded="true"] .nav-hamburger-label-text--menu {
-        transform: translateY(8px);
         opacity: 0;
     }
 
     .nav-hamburger[aria-expanded="true"] .nav-hamburger-label-text--close {
-        transform: translateY(0);
         opacity: 1;
     }
 
@@ -1790,19 +1807,24 @@ body.show-grid .debug-grid::after {
         z-index: 50;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-24px);
-        transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
+        clip-path: inset(0 0 100% 0);
+        transition: opacity 0.35s ease, clip-path 0.35s ease, visibility 0s linear 0.35s;
     }
 
     .nav-links.nav-open {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
-        transition: opacity 0.35s ease, transform 0.35s ease;
+        clip-path: inset(0 0 0% 0);
+        transition: opacity 0.35s ease, clip-path 0.35s ease;
     }
 
     .nav-links li {
         width: 100%;
+    }
+
+    .nav-links .nav-icon {
+        width: 24px;
+        height: 24px;
     }
 
     /* --- Hero --- */

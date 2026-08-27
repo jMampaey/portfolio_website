@@ -2192,6 +2192,10 @@ body.show-grid .debug-grid::after {
         transform: translateY(-32px) scale(1.12);
     }
 
+    .project-hero-video.project-hero-video--blendmotion {
+        transform: translateY(-24px) scale(1.12);
+    }
+
     .project-hero-card {
         left: 16px;
         right: 16px;
@@ -2326,6 +2330,23 @@ body.show-grid .debug-grid::after {
         border-radius: 0;
     }
 
+    /* Bone masking video: keep the left 50% of the frame, stretched to
+       fill the full section width. */
+    .project-features-section .project-image-right.project-image-right--bonemasking {
+        height: auto;
+        aspect-ratio: 960 / 1080;
+    }
+
+    .project-features-section .project-image-right.project-image-right--bonemasking video {
+        display: block;
+        position: static;
+        width: 200%;
+        max-width: none;
+        height: auto;
+        transform: translateX(0px);
+        border-radius: 0;
+    }
+
     /* Undo/Redo image: show only the right half of the source image,
        stretched to fill the full width of the section. */
     .project-features-section .project-image-left.project-image-left--crop-right {
@@ -2359,6 +2380,25 @@ body.show-grid .debug-grid::after {
         border-radius: 0;
     }
 
+    /* Layered masks video: temporarily shown uncropped, full width, at its
+       natural aspect ratio while we decide how to crop it. */
+    /* Animation statemachines video: crop 2/3 off the left, keeping the
+       right third, stretched to fill the full section width. */
+    .project-features-section .project-image-left.project-image-left--layeredmasks {
+        height: auto;
+        aspect-ratio: 768 / 1080;
+    }
+
+    .project-features-section .project-image-left.project-image-left--layeredmasks video {
+        display: block;
+        position: static;
+        width: 250%;
+        max-width: none;
+        height: auto;
+        transform: translateX(-60%);
+        border-radius: 0;
+    }
+
     .code-section {
         flex-direction: column;
     }
@@ -2384,13 +2424,21 @@ body.show-grid .debug-grid::after {
         width: 100%;
     }
 
+    /* Blend space visualizer video: temporarily shown uncropped, full width,
+       at its natural aspect ratio while we decide how to crop it. */
+    /* Blend space visualizer video: crop 10% off the left and 35% off the
+       right, stretched to fill the full section width. */
     .code-video {
-        height: 220px;
+        height: auto;
+        aspect-ratio: 904.2 / 878;
     }
 
     .code-video video {
-        width: 100%;
-        height: 100%;
+        display: block;
+        width: 181.818%;
+        max-width: none;
+        height: auto;
+        transform: translateX(-10%);
         object-position: center;
     }
 
@@ -2430,6 +2478,25 @@ body.show-grid .debug-grid::after {
         max-width: none;
         height: auto;
         transform: translate(-33.333%, -15%);
+    }
+
+    /* 2D Triangulation video: temporarily shown uncropped, full width, at
+       its natural aspect ratio while we decide how to crop it. */
+    /* 2D blendspaces video: crop 30% off the left and 30% off the right,
+       and crop down to just the 3D viewport at the top (the rest of the
+       frame below is an empty gray panel), stretched to fill the section. */
+    .feature-showcase-media.feature-showcase-media--2dtriangulation {
+        height: auto;
+        aspect-ratio: 768 / 860;
+    }
+
+    .feature-showcase-media.feature-showcase-media--2dtriangulation .feature-showcase-image {
+        display: block;
+        position: static;
+        width: 250%;
+        max-width: none;
+        height: auto;
+        transform: translate(-30%, -0.37%);
     }
 
     .feature-showcase-card {

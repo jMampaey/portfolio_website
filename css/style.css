@@ -1894,6 +1894,10 @@ body.show-grid .debug-grid::after {
         gap: 0;
     }
 
+    .recent-work-wrapper .project:last-child {
+        margin-bottom: 16px;
+    }
+
     .recent-work-wrapper h1 {
         font-size: 3.6rem;
         margin-bottom: 32px;

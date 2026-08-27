@@ -2280,6 +2280,39 @@ body.show-grid .debug-grid::after {
         order: -1;
     }
 
+    /* Curve editor image: show only the left half of the source image,
+       stretched to fill the full width of the section. The source also has
+       a solid black margin baked into its top ~20px, cropped off here too. */
+    .project-features-section .project-image-right.project-image-right--crop-left {
+        height: auto;
+        aspect-ratio: 750 / 732;
+    }
+
+    .project-features-section .project-image-right.project-image-right--crop-left img {
+        display: block;
+        width: 200%;
+        max-width: none;
+        height: auto;
+        border-radius: 0;
+        transform: translateY(-2.66%);
+    }
+
+    /* Undo/Redo image: show only the right half of the source image,
+       stretched to fill the full width of the section. */
+    .project-features-section .project-image-left.project-image-left--crop-right {
+        height: auto;
+    }
+
+    .project-features-section .project-image-left.project-image-left--crop-right img {
+        display: block;
+        position: static;
+        width: 200%;
+        max-width: none;
+        height: auto;
+        transform: translateX(-50%);
+        border-radius: 0;
+    }
+
     .code-section {
         flex-direction: column;
     }
@@ -2320,15 +2353,20 @@ body.show-grid .debug-grid::after {
     }
 
     .feature-showcase-media {
-        height: 220px;
+        height: auto;
+        aspect-ratio: 11 / 15;
     }
 
+    /* Animation Syncing video: show only the center third of the source,
+       stretched to fill the full width of the section, with the top 15%
+       of that crop trimmed off too. */
     .feature-showcase-media .feature-showcase-image {
+        display: block;
         position: static;
-        transform: none;
-        width: 100%;
+        width: 300%;
         max-width: none;
-        height: 220px;
+        height: auto;
+        transform: translate(-33.333%, -15%);
     }
 
     .feature-showcase-card {

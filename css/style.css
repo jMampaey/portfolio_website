@@ -2188,6 +2188,10 @@ body.show-grid .debug-grid::after {
         transform: scale(1.12);
     }
 
+    .project-hero-video.project-hero-video--whoop {
+        transform: translateY(-32px) scale(1.12);
+    }
+
     .project-hero-card {
         left: 16px;
         right: 16px;
@@ -2306,6 +2310,22 @@ body.show-grid .debug-grid::after {
         transform: translateY(-2.66%);
     }
 
+    /* In engine editor image: crop 20% off the top, 55% off the right,
+       and 22.5% off the bottom, stretched to fill the full section width. */
+    .project-features-section .project-image-right.project-image-right--editor-crop {
+        height: auto;
+        aspect-ratio: 675 / 432.4;
+    }
+
+    .project-features-section .project-image-right.project-image-right--editor-crop img {
+        display: block;
+        width: 222.222%;
+        max-width: none;
+        height: auto;
+        transform: translateY(-20%);
+        border-radius: 0;
+    }
+
     /* Undo/Redo image: show only the right half of the source image,
        stretched to fill the full width of the section. */
     .project-features-section .project-image-left.project-image-left--crop-right {
@@ -2319,6 +2339,23 @@ body.show-grid .debug-grid::after {
         max-width: none;
         height: auto;
         transform: translateX(-50%);
+        border-radius: 0;
+    }
+
+    /* Scene serialization image: crop 50% off the left, 20% off the top,
+       and 20% off the bottom. */
+    .project-features-section .project-image-left.project-image-left--scene-crop {
+        height: auto;
+        aspect-ratio: 750 / 451.2;
+    }
+
+    .project-features-section .project-image-left.project-image-left--scene-crop img {
+        display: block;
+        position: static;
+        width: 200%;
+        max-width: none;
+        height: auto;
+        transform: translate(-50%, -20%);
         border-radius: 0;
     }
 
@@ -2359,6 +2396,23 @@ body.show-grid .debug-grid::after {
 
     .feature-showcase {
         margin-top: 8px;
+    }
+
+    /* Asset browser image: crop 25% off the left, 20% off the right, and
+       10% off the top, stretched to fill the full section width. */
+    .asset-browser-media {
+        overflow: hidden;
+        height: auto;
+        aspect-ratio: 1245.2 / 561.6;
+    }
+
+    .asset-browser-media .feature-showcase-image {
+        display: block;
+        position: static;
+        width: 181.818%;
+        max-width: none;
+        height: auto;
+        transform: translate(-25%, -10%);
     }
 
     .feature-showcase-media {

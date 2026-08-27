@@ -12,7 +12,7 @@
 
 <body>
     <section class="project-hero debug-grid">
-        <video class="project-hero-video" autoplay loop muted playsinline>
+        <video class="project-hero-video project-hero-video--whoop" autoplay loop muted playsinline>
             <source src="../assets/videos/projects/whoop/whoop_demo.mp4" type="video/mp4">
         </video>
         <nav class="main-nav main-nav--transparent">
@@ -108,14 +108,14 @@
                     I was the person to started to focus on making the in game editor a reality. The idea was to create a system where anyone could create a panel or component visualization. This system made it during development easy to display something or make changes to components at runtime. We also had a specific camera that was purely for the editor and not for gameplay purposes.
                 </p>
             </div>
-            <div class="project-image-right project-image-right--crop-left">
+            <div class="project-image-right project-image-right--crop-left project-image-right--editor-crop">
                 <img src="../assets/images/projects/whoop/editor.png" alt="Editor">
             </div>
         </div>
 
 
         <div class="project">
-            <div class="project-image-left project-image-left--crop-right">
+            <div class="project-image-left project-image-left--crop-right project-image-left--scene-crop">
                 <img src="../assets/images/projects/whoop/scene_serialization.png" alt="Scene serialization">
             </div>
             <div class="project-content">
@@ -168,7 +168,9 @@ WHOOP_REGISTER_COMPONENT(whoop::Light, "Light");</code></pre>
 
 
     <section class="feature-showcase debug-grid">
-        <img src="../assets/images/projects/whoop/asset_browser.png" alt="Asset browser" class="feature-showcase-image">
+        <div class="asset-browser-media">
+            <img src="../assets/images/projects/whoop/asset_browser.png" alt="Asset browser" class="feature-showcase-image">
+        </div>
         <div class="feature-showcase-card">
             <h2>Asset browser</h2>
             <div class="feature-showcase-columns">

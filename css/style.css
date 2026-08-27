@@ -1759,6 +1759,17 @@ body.show-grid .debug-grid::after {
         cursor: pointer;
         padding: 8px 0;
         z-index: 60;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .nav-links a {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
     }
 
     .nav-hamburger-label {

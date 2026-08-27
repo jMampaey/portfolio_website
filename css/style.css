@@ -1726,7 +1726,8 @@ body.show-grid .debug-grid::after {
 
     /* --- Nav --- */
     .main-nav::before,
-    .main-nav.main-nav--on-dark::before {
+    .main-nav.main-nav--on-dark::before,
+    .main-nav.main-nav--transparent::before {
         left: 8px;
         right: 8px;
     }
@@ -1776,7 +1777,8 @@ body.show-grid .debug-grid::after {
         transition: opacity 0.3s ease;
     }
 
-    .main-nav--on-dark .nav-hamburger-label-text {
+    .main-nav--on-dark .nav-hamburger-label-text,
+    .main-nav--transparent .nav-hamburger-label-text {
         color: var(--lightest-orange);
     }
 
@@ -1831,7 +1833,8 @@ body.show-grid .debug-grid::after {
         height: 24px;
     }
 
-    .main-nav--on-dark .nav-links {
+    .main-nav--on-dark .nav-links,
+    .main-nav--transparent .nav-links {
         background-color: var(--dark-green);
         background-image: url('../assets/images/backgrounds/noise.png');
     }
@@ -2163,6 +2166,207 @@ body.show-grid .debug-grid::after {
     .footer-link {
         font-size: 1.4rem;
         line-height: 2.1rem;
+    }
+
+    /* --- Project detail pages --- */
+    .project-hero {
+        height: calc(100vh - 104px);
+    }
+
+    .project-hero-card {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        padding: 32px 24px;
+    }
+
+    .project-hero-card h2 {
+        font-size: 2rem;
+    }
+
+    .project-hero-card .project-tags {
+        margin-bottom: 16px;
+    }
+
+    .project-hero-card .project-tag {
+        font-size: 1.5rem;
+    }
+
+    .info-row .info-label {
+        font-size: 1.5rem;
+        flex: 0 0 90px;
+    }
+
+    .info-separator {
+        height: 28px;
+        margin: 0 8px;
+    }
+
+    .info-row .info-value {
+        font-size: 1.4rem;
+    }
+
+    .project-info-section {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .project-summary-card,
+    .project-detail-card {
+        padding: 32px 24px;
+    }
+
+    .project-summary-card p {
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+    }
+
+    .project-detail-card h3 {
+        font-size: 2rem;
+    }
+
+    .project-detail-card p {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    .project-features-section {
+        margin-top: 8px;
+    }
+
+    .project-features-section .project {
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+
+    .project-features-section > .code-section {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .project-features-section .project-content {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 32px 24px;
+    }
+
+    .project-features-section .project-content:first-child,
+    .project-features-section .project-content:last-child {
+        padding: 32px 24px;
+        margin-left: 0;
+    }
+
+    .project-features-section .project-content h2 {
+        font-size: 2rem;
+    }
+
+    .project-features-section .project-content p {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    .project-features-section .project-image-right,
+    .project-features-section .project-image-left {
+        position: static;
+        width: 100%;
+        height: 220px;
+        order: -1;
+    }
+
+    .code-section {
+        flex-direction: column;
+    }
+
+    .code-section .project-detail-card,
+    .code-section.code-section--reverse .project-detail-card {
+        padding: 32px 24px;
+        order: 0;
+    }
+
+    .code-card,
+    .code-section.code-section--reverse .code-card {
+        padding: 24px;
+        order: 0;
+    }
+
+    .code-card code {
+        font-size: 1.3rem;
+    }
+
+    .code-section--media .project-detail-card {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .code-video {
+        height: 220px;
+    }
+
+    .code-video video {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+    }
+
+    .feature-showcase {
+        margin-top: 8px;
+    }
+
+    .feature-showcase-media {
+        height: 220px;
+    }
+
+    .feature-showcase-media .feature-showcase-image {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: none;
+        height: 220px;
+    }
+
+    .feature-showcase-card {
+        padding: 32px 24px;
+    }
+
+    .feature-showcase-card h2 {
+        font-size: 2rem;
+    }
+
+    .feature-showcase-columns {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .feature-showcase-column {
+        flex: 1 1 auto;
+    }
+
+    .feature-showcase-column h3 {
+        font-size: 1.6rem;
+    }
+
+    .feature-showcase-column p {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    .project-end-result-section {
+        margin-top: 8px;
+    }
+
+    .project-end-result-section .project-summary-card {
+        padding: 32px 24px;
+    }
+
+    .project-end-result-section .project-summary-card h3 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+    }
+
+    .project-end-result-section .project-summary-card p {
+        font-size: 1.8rem;
+        line-height: 2.6rem;
     }
 }
 

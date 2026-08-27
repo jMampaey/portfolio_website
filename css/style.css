@@ -1807,7 +1807,7 @@ body.show-grid .debug-grid::after {
         background-image: url('../assets/images/backgrounds/noise-light.png');
         background-repeat: repeat;
         border: none;
-        border-radius: 16px;
+        border-radius: 12px;
         z-index: 50;
         opacity: 0;
         visibility: hidden;

@@ -2173,6 +2173,12 @@ body.show-grid .debug-grid::after {
         height: calc(100vh - 104px);
     }
 
+    /* The source trailer has black letterbox bars baked into the footage;
+       zoom past them so they get cropped off by .project-hero's overflow:hidden. */
+    .project-hero-video {
+        transform: scale(1.12);
+    }
+
     .project-hero-card {
         left: 16px;
         right: 16px;

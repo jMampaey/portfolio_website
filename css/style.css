@@ -56,6 +56,15 @@ img {
     height: auto;
 }
 
+/* Prevent the mobile text-selection highlight / tap callout on anything clickable */
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 /* Color Variables */
 :root {
     --darkest-green: #003039;
@@ -1759,17 +1768,6 @@ body.show-grid .debug-grid::after {
         cursor: pointer;
         padding: 8px 0;
         z-index: 60;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        user-select: none;
-    }
-
-    .nav-links a {
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        user-select: none;
     }
 
     .nav-hamburger-label {

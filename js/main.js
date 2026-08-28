@@ -74,12 +74,14 @@ navLinks.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => setNavOpen(false));
 });
 
-Prism.hooks.add('after-highlight', (env) => {
-    if (!env.element.closest('.code-block')) return;
-    const lines = env.element.innerHTML.split('\n');
-    if (lines[lines.length - 1] === '') lines.pop();
-    env.element.innerHTML = lines.map(line => `<span class="code-line">${line || ' '}</span>`).join('');
-});
+if (typeof Prism !== 'undefined') {
+    Prism.hooks.add('after-highlight', (env) => {
+        if (!env.element.closest('.code-block')) return;
+        const lines = env.element.innerHTML.split('\n');
+        if (lines[lines.length - 1] === '') lines.pop();
+        env.element.innerHTML = lines.map(line => `<span class="code-line">${line || ' '}</span>`).join('');
+    });
+}
 
 document.querySelectorAll('.copy-code-button').forEach((button) => {
     button.addEventListener('click', () => {

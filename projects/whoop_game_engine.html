@@ -102,10 +102,10 @@
             <div class="project-content">
                 <h2>In engine editor</h2>
                 <p>
-                    One of the feature that we decided on was to have a in engine editor. As a team, we decided that this was something that made the level design iteration a lot faster. Having the option to just edit a level and test it right away, was something we felt was a must.
+                    One of the features that we decided on was to have an in-engine editor. As a team, we decided that this was something that made the level design iteration a lot faster. Having the option to just edit a level and test it right away, was something we felt was a must.
                 </p>
                 <p>
-                    I was the person to started to focus on making the in game editor a reality. The idea was to create a system where anyone could create a panel or component visualization. This system made it during development easy to display something or make changes to components at runtime. We also had a specific camera that was purely for the editor and not for gameplay purposes.
+                    I was the person who started to focus on making the in-game editor a reality. The idea was to create a system where anyone could create a panel or component visualization. This system made it during development easy to display something or make changes to components at runtime. We also had a specific camera that was purely for the editor and not for gameplay purposes.
                 </p>
             </div>
             <div class="project-image-right project-image-right--crop-left project-image-right--editor-crop">
@@ -121,7 +121,7 @@
             <div class="project-content">
                 <h2>Scene serialization</h2>
                 <p>
-                    To make the development of certain features a lot faster, we decided that we wanted to create the concept of scenes. Which made it possible to have all of the entities and components ready in a scene to test with. There was one very important thing to take into account for this and that was that those scenes needed to be serialized so then can be stored and loaded back up.
+                    To make the development of certain features a lot faster, we decided that we wanted to create the concept of scenes. Which made it possible to have all of the entities and components ready in a scene to test with. There was one very important thing to take into account for this and that was that those scenes needed to be serialized so they can be stored and loaded back up.
                 </p>
                 <p>
                     This serialization meant that all the entities and components that were in that scene should be stored. The system for this should also allow for new components to be registered very easily to be used in the serialization.
@@ -137,7 +137,7 @@
                 To make this serialization as easy as possible, I created a serialization registry where it is possible to register a component to be serialized. Once a component is registered, the scene serializer knows what to do for that specific component and is able to save and load the data.
             </p>
             <p>
-                Having this system in place was the first step to in making the scene serialization expendable. The second step was to make it as easy as possible to add new components to this registry. I created a macro for this. So the only thing someone needed to do when creating a new component was call the macro with the correct data and the component was registered.
+                Having this system in place was the first step in making the scene serialization extendable. The second step was to make it as easy as possible to add new components to this registry. I created a macro for this. So the only thing someone needed to do when creating a new component was call the macro with the correct data and the component was registered.
             </p>
         </div>
         <div class="code-card">
@@ -176,7 +176,7 @@ WHOOP_REGISTER_COMPONENT(whoop::Light, "Light");</code></pre>
             <div class="feature-showcase-columns">
                 <div class="feature-showcase-column">
                     <p>
-                        During the later stages of this project, we noticed that is was not that easy to create a new level, because it took quite long to add a new object to the scene. Especially if you did not really know what you were looking for. To improve this process of adding objects to the scene, I decided to create an asset browser. In this asset browser it is possible to see any file that is in the project and use drag and drop to add things to the scene or other places (like dragging in an animation on an animator component).
+                        During the later stages of this project, we noticed that it was not that easy to create a new level, because it took quite long to add a new object to the scene. Especially if you did not really know what you were looking for. To improve this process of adding objects to the scene, I decided to create an asset browser. In this asset browser it is possible to see any file that is in the project and use drag and drop to add things to the scene or other places (like dragging in an animation on an animator component).
                     </p>
                 </div>
                 <div class="feature-showcase-column">
@@ -184,7 +184,7 @@ WHOOP_REGISTER_COMPONENT(whoop::Light, "Light");</code></pre>
                         The asset browser made the creation of a level and switching between scenes a lot better. We even managed to create a pretty big sample level in a relative short time. It also allowed us to see the project structure a lot better and understand what assets are purely for the editor and what was used for the game.
                     </p>
                     <p>
-                        One of the feature I like about the implementation of this asset browser is that is can look in files with a certain extension to check what kind of file it is. Take a .gltf (or .glb) for example. This can store a mesh but also an animation. They have different behavior when dragged into the scene.
+                        One of the features I like about the implementation of this asset browser is that it can look in files with a certain extension to check what kind of file it is. Take a .gltf (or .glb) for example. This can store a mesh but also an animation. They have different behavior when dragged into the scene.
                     </p>
                 </div>
             </div>
@@ -195,7 +195,7 @@ WHOOP_REGISTER_COMPONENT(whoop::Light, "Light");</code></pre>
         <div class="project-summary-card">
             <h3>End Result</h3>
             <p>
-                We created a custom 3D platformer engine that got selected to be used by a bigger multi-disclipline team to create a new game!
+                We created a custom 3D platformer engine that got selected to be used by a bigger multi-discipline team to create a new game!
             </p>
         </div>
     </section>
@@ -233,7 +233,7 @@ WHOOP_REGISTER_COMPONENT(whoop::Light, "Light");</code></pre>
     <footer class="footer">
         <div class="container">
             <span class="footer-copyright">© 2026 Jesse Mampaey</span>
-            <span class="footer-credit">Webdesign by <a href="https://design-on.online" class="footer-link">design-on.online</a></span>
+            <span class="footer-credit">Web design by <a href="https://design-on.online" class="footer-link">design-on.online</a></span>
             <a href="../privacy.html" class="footer-link">Privacy statement</a>
         </div>
     </footer>

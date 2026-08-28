@@ -1327,6 +1327,72 @@ body.show-grid .debug-grid::after {
     margin: 0;
 }
 
+/* Legal / long-form text pages (privacy statement, etc.) */
+.legal-section {
+    display: flex;
+    position: relative;
+    margin-top: 24px;
+}
+
+.legal-content {
+    background-color: var(--lightest-orange);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 40px 80px;
+    border-radius: 16px;
+    position: relative;
+}
+
+.legal-content h1 {
+    color: var(--darkest-green);
+    margin: 0 0 8px 0;
+}
+
+.legal-content .legal-updated {
+    font-family: var(--font-primary);
+    font-size: 1.4rem;
+    color: var(--green);
+    margin: 0 0 24px 0;
+}
+
+.legal-content h2 {
+    font-family: var(--font-secondary);
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--darkest-green);
+    margin: 16px 0 4px 0;
+}
+
+.legal-content p {
+    color: var(--darkest-green);
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    margin: 0;
+}
+
+.legal-content ul {
+    margin: 0;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legal-content li {
+    color: var(--darkest-green);
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+}
+
+.legal-content a {
+    color: var(--cta-orange);
+}
+
 .photo-card {
     border-radius: 16px;
     overflow: hidden;
@@ -1730,6 +1796,14 @@ body.show-grid .debug-grid::after {
     .homepage-wrapper {
         height: calc(100vh - 16px);
         max-height: none;
+    }
+
+    .legal-content {
+        padding: 64px 24px 48px;
+    }
+
+    .legal-content h1 {
+        font-size: 4rem;
     }
 
 

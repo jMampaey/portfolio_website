@@ -692,9 +692,9 @@ body.show-grid .debug-grid::after {
 
 .project-summary-card p {
     font-family: var(--font-primary);
-    font-size: 1.8rem;
+    font-size: 3.2rem;
     font-weight: 400;
-    line-height: 2.6rem;
+    line-height: 4.6rem;
     color: var(--lightest-orange);
     margin: 0;
 }
@@ -720,10 +720,10 @@ body.show-grid .debug-grid::after {
 
 .project-end-result-section .project-summary-card p {
     font-family: var(--font-primary);
-    font-size: 1.8rem;
+    font-size: 3.2rem;
     font-weight: 400;
     color: var(--lightest-orange);
-    line-height: 2.6rem;
+    line-height: 4.6rem;
     margin: 0;
 }
 
@@ -1344,6 +1344,7 @@ body.show-grid .debug-grid::after {
     padding: 40px;
     border-radius: 16px;
     position: relative;
+    margin-bottom: 16px;
 }
 
 .legal-content .legal-updated {
@@ -2208,6 +2209,10 @@ body.show-grid .debug-grid::after {
     .recent-work-wrapper--flush {
         margin-top: 0;
         padding-top: 66px;
+    }
+
+    .recent-work-wrapper + .footer {
+        margin-top: 8px;
     }
 
     /* --- Section title top spacing --- */

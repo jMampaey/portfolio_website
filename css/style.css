@@ -1328,35 +1328,29 @@ body.show-grid .debug-grid::after {
 }
 
 /* Legal / long-form text pages (privacy statement, etc.) */
-.legal-section {
-    display: flex;
-    position: relative;
-    margin-top: 24px;
-}
-
+/* Page chrome (wide dark-green wrapper with grain) is the shared
+   .recent-work-wrapper.noise pattern used by the Projects page - see
+   "Recent work section" above. .legal-content is just the content card
+   that sits inside it, styled like the site's other green cards
+   (.skills-card / .education-card). */
 .legal-content {
-    background-color: var(--lightest-orange);
+    background-color: var(--green);
     display: flex;
     flex-direction: column;
     gap: 24px;
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 100px 40px 80px;
+    padding: 40px;
     border-radius: 16px;
     position: relative;
-}
-
-.legal-content h1 {
-    color: var(--darkest-green);
-    margin: 0 0 8px 0;
 }
 
 .legal-content .legal-updated {
     font-family: var(--font-primary);
     font-size: 1.4rem;
-    color: var(--green);
-    margin: 0 0 24px 0;
+    color: var(--light-orange);
+    margin: 0 0 8px 0;
 }
 
 .legal-content h2 {
@@ -1364,12 +1358,12 @@ body.show-grid .debug-grid::after {
     font-size: 2.2rem;
     font-weight: 600;
     line-height: 1.2;
-    color: var(--darkest-green);
+    color: var(--lightest-orange);
     margin: 16px 0 4px 0;
 }
 
 .legal-content p {
-    color: var(--darkest-green);
+    color: var(--light-orange);
     font-size: 1.8rem;
     line-height: 2.6rem;
     margin: 0;
@@ -1384,7 +1378,7 @@ body.show-grid .debug-grid::after {
 }
 
 .legal-content li {
-    color: var(--darkest-green);
+    color: var(--light-orange);
     font-size: 1.8rem;
     line-height: 2.6rem;
 }
@@ -1799,11 +1793,7 @@ body.show-grid .debug-grid::after {
     }
 
     .legal-content {
-        padding: 64px 24px 48px;
-    }
-
-    .legal-content h1 {
-        font-size: 4rem;
+        padding: 24px;
     }
 
 

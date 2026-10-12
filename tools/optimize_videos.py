@@ -4,18 +4,18 @@ Usage (from the repo root):
     python tools/optimize_videos.py
 
 What it does:
-  1. For every .mp4 under SOURCE_DIR, writes next to it:
+  1. For every .mp4 under source-assets/videos (the full-quality originals, which
+     are not deployed), writes to the same folder under assets/videos:
        <name>-web.mp4      H.264, max 1920px wide, no audio (videos are muted anyway),
                            index moved to the front so playback can start right away
        <name>-poster.webp  first frame, shown while the video loads
-     The original is left untouched. Outputs are only regenerated when missing or
-     older than their source.
+     Outputs are only regenerated when missing or older than their source.
   2. In every HTML page, points <video> sources at the -web.mp4 version and adds the
      poster. Videos outside the page hero no longer autoplay on load; they get
      preload="none" + data-lazy-autoplay, and js/main.js plays them when they
      scroll into view.
 
-Safe to run repeatedly. Requires ffmpeg (winget install Gyan.FFmpeg) and Pillow.
+Safe to run repeatedly. Requires ffmpeg (winget install Gyan.FFmpeg).
 """
 
 import os
@@ -26,7 +26,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-SOURCE_DIR = "assets/videos"
+SOURCE_ROOT = ROOT / "source-assets"
+OUTPUT_ROOT = ROOT / "assets"
 
 MAX_WIDTH = 1920
 CRF = 26  # lower = better quality, bigger file
@@ -58,12 +59,12 @@ def run(ffmpeg, args):
 def convert_videos(ffmpeg):
     scale = f"scale='min({MAX_WIDTH},iw)':-2"
 
-    for src in sorted((ROOT / SOURCE_DIR).rglob("*.mp4")):
-        if src.stem.endswith("-web"):
-            continue
-        rel = src.relative_to(ROOT).as_posix()
+    for src in sorted((SOURCE_ROOT / "videos").rglob("*.mp4")):
+        rel = src.relative_to(SOURCE_ROOT).as_posix()
+        out = OUTPUT_ROOT / rel
+        out.parent.mkdir(parents=True, exist_ok=True)
 
-        web = src.with_name(f"{src.stem}-web.mp4")
+        web = out.with_name(f"{src.stem}-web.mp4")
         if is_stale(web, src):
             run(ffmpeg, [
                 "-i", str(src),
@@ -82,7 +83,7 @@ def convert_videos(ffmpeg):
             after = web.stat().st_size / 1e6
             print(f"{rel}: {before:,.1f} MB -> {after:,.1f} MB")
 
-        poster = src.with_name(f"{src.stem}-poster.webp")
+        poster = out.with_name(f"{src.stem}-poster.webp")
         if is_stale(poster, src):
             run(ffmpeg, [
                 "-i", str(src), "-frames:v", "1", "-vf", scale,

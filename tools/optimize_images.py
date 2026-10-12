@@ -4,9 +4,10 @@ Usage (from the repo root):
     python tools/optimize_images.py
 
 What it does:
-  1. For every PNG/JPG under the folders in SOURCE_DIRS, writes a resized .webp next
-     to it (the original is left untouched as the full-resolution source).
-     A .webp is only regenerated when it is missing or older than its source.
+  1. For every PNG/JPG under source-assets/images (the full-resolution originals,
+     which are not deployed), writes a resized .webp to the same path under
+     assets/images. A .webp is only regenerated when it is missing or older than
+     its source.
   2. In every HTML page, points <img> tags at the .webp version and adds
      width/height, loading="lazy" and decoding="async".
      Images that already have a loading attribute (e.g. the above-the-fold hero
@@ -22,16 +23,17 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 
-SOURCE_DIRS = ["assets/images/projects", "assets/images/thumbnails"]
+SOURCE_ROOT = ROOT / "source-assets"
+OUTPUT_ROOT = ROOT / "assets"
 
 # Largest width (in px) an image is ever displayed at, times ~2 for high-DPI screens.
 DEFAULT_MAX_WIDTH = 1600
 MAX_WIDTH_OVERRIDES = {
-    "assets/images/thumbnails/image-jesse2.png": 1000,
-    "assets/images/thumbnails/image-jesse-aboutme6.png": 1400,
-    "assets/images/thumbnails/project-template-image.png": 1000,
+    "images/thumbnails/image-jesse2.png": 1000,
+    "images/thumbnails/image-jesse-aboutme6.png": 1400,
+    "images/thumbnails/project-template-image.png": 1000,
     # Full-bleed showcase image, can be shown at full viewport width.
-    "assets/images/projects/whoop/asset_browser.png": 2264,
+    "images/projects/whoop/asset_browser.png": 2264,
 }
 
 WEBP_QUALITY = 82
@@ -41,29 +43,29 @@ SRC_ATTR = re.compile(r'\bsrc="([^"]+)"')
 
 
 def convert_images():
-    for source_dir in SOURCE_DIRS:
-        for src in sorted((ROOT / source_dir).rglob("*")):
-            if src.suffix.lower() not in (".png", ".jpg", ".jpeg"):
-                continue
+    for src in sorted((SOURCE_ROOT / "images").rglob("*")):
+        if src.suffix.lower() not in (".png", ".jpg", ".jpeg"):
+            continue
 
-            dst = src.with_suffix(".webp")
-            if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
-                continue
+        rel = src.relative_to(SOURCE_ROOT).as_posix()
+        dst = (OUTPUT_ROOT / rel).with_suffix(".webp")
+        if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
+            continue
 
-            rel = src.relative_to(ROOT).as_posix()
-            max_width = MAX_WIDTH_OVERRIDES.get(rel, DEFAULT_MAX_WIDTH)
+        max_width = MAX_WIDTH_OVERRIDES.get(rel, DEFAULT_MAX_WIDTH)
 
-            Image.MAX_IMAGE_PIXELS = None  # some sources are very large photos
-            with Image.open(src) as im:
-                im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
-                if im.width > max_width:
-                    height = round(im.height * max_width / im.width)
-                    im = im.resize((max_width, height), Image.LANCZOS)
-                im.save(dst, "WEBP", quality=WEBP_QUALITY, method=6)
+        Image.MAX_IMAGE_PIXELS = None  # some sources are very large photos
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        with Image.open(src) as im:
+            im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
+            if im.width > max_width:
+                height = round(im.height * max_width / im.width)
+                im = im.resize((max_width, height), Image.LANCZOS)
+            im.save(dst, "WEBP", quality=WEBP_QUALITY, method=6)
 
-            before = src.stat().st_size / 1024
-            after = dst.stat().st_size / 1024
-            print(f"{rel}: {before:,.0f} KB -> {after:,.0f} KB")
+        before = src.stat().st_size / 1024
+        after = dst.stat().st_size / 1024
+        print(f"{rel}: {before:,.0f} KB -> {after:,.0f} KB")
 
 
 def set_attr(tag, name, value):

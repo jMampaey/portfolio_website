@@ -1,0 +1,5 @@
+# The site is plain static files served from the repo root. The "build" only removes
+# folders that should not be public: full-resolution source media and dev scripts.
+[build]
+  publish = "."
+  command = "rm -rf source-assets tools"

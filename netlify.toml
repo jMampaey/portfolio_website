@@ -3,3 +3,12 @@
 [build]
   publish = "."
   command = "rm -rf source-assets tools"
+
+# Deploy notification functions (netlify/functions) post to Discord. Their source
+# can't be deleted before publishing because Netlify bundles it after the build,
+# so hide it from the public site instead.
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404"
+  status = 404
+  force = true

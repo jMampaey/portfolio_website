@@ -99,3 +99,18 @@ document.querySelectorAll('.copy-code-button').forEach((button) => {
         }).catch(() => {});
     });
 });
+
+// Videos marked data-lazy-autoplay only download and play while they are on screen.
+const lazyVideoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.play().catch(() => {});
+        } else {
+            entry.target.pause();
+        }
+    });
+}, { rootMargin: '200px 0px' });
+
+document.querySelectorAll('video[data-lazy-autoplay]').forEach((video) => {
+    lazyVideoObserver.observe(video);
+});
